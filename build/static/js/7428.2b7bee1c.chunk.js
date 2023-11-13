@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkfront=self.webpackChunkfront||[]).push([[7428],{57428:function(e,t,c){e.exports=c.p+"static/media/FORZE.ced176a3c23fa748d07d.png"}}]);

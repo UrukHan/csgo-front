@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkfront=self.webpackChunkfront||[]).push([[8790],{68790:function(f,s,t){f.exports=t.p+"static/media/Misfits.5f52281fd359818ea86f.png"}}]);

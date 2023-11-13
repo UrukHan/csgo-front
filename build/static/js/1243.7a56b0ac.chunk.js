@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkfront=self.webpackChunkfront||[]).push([[1243],{41243:function(e,s,t){e.exports=t.p+"static/media/Bad News Eagles.371c28e4998fda4f2b2c.png"}}]);

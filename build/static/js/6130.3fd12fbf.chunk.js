@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkfront=self.webpackChunkfront||[]).push([[6130],{26130:function(e,a,t){e.exports=t.p+"static/media/GTZ.a499f7ea9cf1aa1241e7.png"}}]);

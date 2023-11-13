@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkfront=self.webpackChunkfront||[]).push([[5877],{5877:function(t,e,n){t.exports=n.p+"static/media/BESTIA.d85b1b6b36c08f612610.png"}}]);

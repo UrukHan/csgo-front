@@ -1,0 +1,72 @@
+
+.team-selection {
+    display: flex;
+    height: 100%;
+    width: 30%;
+    position: relative;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.team-logo-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 60%;
+    width: 100%;
+    margin-top: 1%;
+}
+
+.team-logo {
+    width: 90%;
+    height: 90%;
+    object-fit: contain;
+    margin-bottom: 3%;
+
+}
+
+.select-container {
+    margin-bottom: 3%;
+    height: 30%;
+    width: 80%;
+    margin-left: 10%;
+}
+
+.map-select-container {
+    margin-bottom: 3%;
+    height: 30%;
+    width: 40%;
+}
+
+.num-select-container {
+    margin-bottom: 3%;
+    height: 30%;
+    width: 15%;
+}
+
+
+@media (max-aspect-ratio: 1/1) {
+
+    .team-logo-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: 50%;
+        width: 100%;
+        margin-top: 5%;
+    }
+
+    .select-container {
+        margin-bottom: 3%;
+        height: 50%;
+        width: 80%;
+        margin-left: 10%;
+    }
+
+    .num-select-container {
+        margin-bottom: 3%;
+        height: 30%;
+        width: 20%;
+    }
+
+}

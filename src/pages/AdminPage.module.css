@@ -1,0 +1,185 @@
+.page {
+    height: 92%;
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    background-color: var(--primary-color);
+}
+
+.payments-container {
+    height: 80%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.title-container {
+    height: 10%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
+}
+
+.date-inputs-container {
+    height: 20%;
+    width: 90%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 5%;
+    margin-left: 5%;
+}
+
+.table-container {
+    height: 70%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    background-color: var(--heder-color);
+    overflow: auto;
+    margin-top: 2%;
+}
+
+.date-input-container {
+    width: 45%;
+}
+
+.date-input {
+    width: 100%;
+    height: 30%;
+    background-color: var(--border-color);
+    color: var(--light-test-color);
+    padding: 1%;
+    border: none;
+    border-radius: 1%;
+    font-size: 100%;
+}
+
+.buttons-container {
+    width: 100%;
+    height: 15%;
+    display: flex;
+    justify-content: center;
+    margin-top: 5%;
+}
+
+.admin-button {
+    background-color: var(--border-color);
+    font-size: 100%;
+    width: 50%;
+    height: 100%;
+    color: white;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    border: 1px solid var(--border-color);
+    transition-duration: 0.4s;
+}
+
+.admin-logout-button {
+    background-color: var(--border-color);
+    font-size: 100%;
+    width: 50%;
+    height: 10%;
+    color: white;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    border: 1px solid var(--border-color);
+    transition-duration: 0.4s;
+    margin-top: 5%;
+}
+
+.admin-button:hover,
+.admin-logout-button:hover {
+    background-color: var(--dark-test-color);
+}
+.admin-button:active,
+.admin-logout-button:active{
+    background-color: var(--blue-color);
+}
+
+.admin-button-disabled {
+    background-color: var(--heder-color);
+    font-size: 100%;
+    width: 50%;
+    height: 100%;
+    color: var(--border-color);
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    border: 1px solid var(--border-color);
+    transition-duration: 0.4s;
+}
+
+.admin-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.admin-table th,
+.admin-table td {
+    padding: 1%;
+    text-align: left;
+}
+
+.admin-table th {
+    background-color: var(--heder-color);
+    color: var(--white-color);
+}
+
+.admin-table tbody tr:hover {
+    background-color: var(--dark-test-color);
+}
+
+.active-row {
+    background-color: var(--border-color);
+}
+
+.table-row {
+    cursor: pointer;
+    color: var(--light-test-color);
+}
+
+@media (max-aspect-ratio: 1/1) {
+
+    .page {
+        height: 92.5%;
+        width: 100%;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        background-color: var(--primary-color);
+    }
+
+    .date-inputs-container {
+        height: 15%;
+        width: 90%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        margin-top: 12%;
+        margin-left: 5%;
+    }
+
+    .table-container {
+        height: 60%;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        background-color: var(--heder-color);
+        overflow: auto;
+        font-size: 75%;
+        margin-top: 5%;
+    }
+}

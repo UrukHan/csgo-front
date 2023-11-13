@@ -1,0 +1,191 @@
+
+.team-selection-container {
+    background-color: var(--primary-color);
+    border-bottom: 1px solid var(--border-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    box-sizing: border-box;
+    height: 12%;
+    padding-block: 1%;
+}
+
+.bank-team-container {
+    height: 80%;
+    color: var(--dark-test-color);
+    font-size: 70%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-basis: 20%;
+    background-color: var(--heder-color);
+    border: 1px solid var(--border-color);
+}
+
+.bank-team-container:active,
+.bank-team-container:hover {
+    background-color: var(--border-color);
+}
+
+.profit-text {
+    font-size: 100%;
+    margin-bottom: 1%;
+}
+
+.profit-amount {
+    color: #26b453;
+    font-size: 200%;
+    margin-bottom: 1%;
+}
+
+.per-text {
+    font-size: 70%;
+    margin-bottom: 1%;
+}
+
+.my-bets-modal {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 100;
+}
+
+.bets-bank-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    top: 0;
+    left: 0;
+    width: 32%;
+    height: 10%;
+    z-index: 100;
+}
+
+.bets-bank-year {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 100%;
+    z-index: 100;
+}
+
+.bets-bank-month {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 100%;
+    z-index: 100;
+}
+
+.my-bets-modal-content {
+    width: 30%;
+    height: 50%;
+    padding: 1%;
+    background-color: var(--secondary-color);
+    border: 1px solid var(--dark-test-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.team-container-primary {
+    display: flex;
+    justify-content: center;
+    flex-grow: 1;
+    margin-left: 0%;
+    width: 30%;
+    height: 100%;
+    font-size: 80%;
+}
+
+.team-container-secondary {
+    display: flex;
+    justify-content: flex-end;
+    flex-grow: 1;
+    margin-left: 0%;
+    width: 30%;
+    height: 100%;
+    font-size: 80%;
+}
+
+.team-label-primary,
+.team-label-secondary {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.get-team-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-basis: 20%;
+}
+
+.get-button {
+    background-color: var(--primary-color);
+    color: var(--white-color);
+    font-family: var(--font-family);
+    font-size: 80%;
+    cursor: pointer;
+    width: 5vh;
+    height: 5vh;
+    padding: 0;
+    box-sizing: border-box;
+    border: 1px solid var(--border-color);
+    border-radius: 1vh;
+}
+
+@media (max-aspect-ratio: 1/1) {
+
+    .team-selection-container {
+        background-color: var(--primary-color);
+        border-bottom: 1px solid var(--border-color);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        box-sizing: border-box;
+        height: 14%;
+    }
+
+    .my-bets-modal-content {
+        width: 75%;
+        height: 50%;
+        background-color: var(--heder-color);
+        padding: 1%;
+        border: 1px solid var(--dark-test-color);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .bets-bank-container {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        top: 0;
+        left: 0;
+        width: 76%;
+        height: 10%;
+        z-index: 100;
+    }
+}

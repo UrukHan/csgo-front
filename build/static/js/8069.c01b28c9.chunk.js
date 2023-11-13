@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkfront=self.webpackChunkfront||[]).push([[8069],{31496:function(t,n,c){t.exports=c.p+"static/media/Entropiq.792b328dc7071195c8d0.png"}}]);

@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkfront=self.webpackChunkfront||[]).push([[7912],{27912:function(e,n,s){e.exports=s.p+"static/media/9 Pandas.54273be4624631d038eb.png"}}]);

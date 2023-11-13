@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkfront=self.webpackChunkfront||[]).push([[7327],{97327:function(n,c,s){n.exports=s.p+"static/media/Young Ninjas.5943db3c60c05b7cb5a7.png"}}]);

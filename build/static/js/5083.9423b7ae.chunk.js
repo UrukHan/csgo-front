@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkfront=self.webpackChunkfront||[]).push([[5083],{85083:function(e,n,s){e.exports=s.p+"static/media/Copenhagen Flames.8a55c26d1ecbe1605ff7.png"}}]);

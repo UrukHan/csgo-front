@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkfront=self.webpackChunkfront||[]).push([[4817],{14817:function(e,t,c){e.exports=c.p+"static/media/DeadWeight.ddc5e139b81cdeb80426.png"}}]);

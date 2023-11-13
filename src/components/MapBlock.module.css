@@ -1,0 +1,249 @@
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 14.28%;
+}
+
+.container-dark {
+    background-color: var(--heder-color);
+}
+
+.container-light {
+    background-color: var(--primary-color);
+}
+
+.mapNameContainer {
+    width: 20%;
+    height: 40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'New_Cicle';
+    font-size: 100%;
+    position: relative;
+    border-right: 1px solid var(--border-color);
+}
+
+.predictionContainer {
+    height: 100%;
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    justify-content: space-between;
+}
+
+.predictionProbabilityContainer {
+    height: 70%;
+    width: 100%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.probabilityNumbers {
+    height: 100%;
+    width: 100%;
+    font-family: 'New_Cicle';
+    font-size: 150%;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    position: absolute;
+    bottom: 0;
+    margin-bottom: 2%;
+}
+
+.predictionCountContainer {
+    height: 30%;
+    width: 100%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.countNumbers {
+    height: 30%;
+    width: 100%;
+    font-family: 'New_Cicle';
+    font-size: 70%;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    position: absolute;
+    top: 0;
+    margin-top: 2%;
+}
+
+.coefficientContainer {
+    font-size: 100%;
+    width: 20%;
+    height: 100%;
+    color: var(--light-test-color);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.coefficientNumbersContainer {
+    width: 100%;
+    height: 35%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.coefficientRightNumbers {
+    font-family: "New_Cicle";
+    font-weight: bold;
+    display: flex;
+    width: 50%;
+    height: 100%;
+    text-align: center;
+    position: relative;
+    top: 0;
+    background-color: var(--secondary-color);
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--border-color);
+    padding-top: 2%;
+}
+
+
+.coefficientLeftNumbers {
+    font-family: "New_Cicle";
+    font-weight: bold;
+    display: flex;
+    width: 50%;
+    height: 100%;
+    text-align: center;
+    position: relative;
+    top: 0;
+    background-color: var(--secondary-color);
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--border-color);
+    padding-top: 2%;
+}
+
+.coefficientABDrawContainer {
+    width: 100%;
+    height: 35%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding-top: 2%;
+}
+
+.coefficientANumbers {
+    font-family: "New_Cicle";
+    font-weight: bold;
+    display: flex;
+    width: 33.33%;
+    height: 100%;
+    text-align: center;
+    position: relative;
+    top: 0;
+    background-color: var(--secondary-color);
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--border-color);
+    padding-top: 2%;
+}
+
+.coefficientDrawNumbers {
+    font-family: "New_Cicle";
+    font-weight: bold;
+    display: flex;
+    width: 33.33%;
+    height: 100%;
+    text-align: center;
+    position: relative;
+    top: 0;
+    background-color: var(--secondary-color);
+    line-height: 100%;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--border-color);
+    padding-top: 2%;
+}
+
+.coefficientBNumbers {
+    font-family: "New_Cicle";
+    font-weight: bold;
+    display: flex;
+    width: 33.33%;
+    height: 100%;
+    text-align: center;
+    position: relative;
+    top: 0;
+    background-color: var(--secondary-color);
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--border-color);
+    padding-top: 2%;
+}
+
+
+@media (max-aspect-ratio: 1/1) {
+
+    .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        height: 14.28%;
+    }
+
+    .probabilityNumbers {
+        height: 70%;
+        width: 100%;
+        font-family: 'New_Cicle';
+        font-size: 130%;
+        font-weight: bold;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        position: absolute;
+        top: 0%;
+        margin-top: 3%;
+    }
+
+    .countNumbers {
+        height: 30%;
+        width: 100%;
+        font-family: 'New_Cicle';
+        font-size: 50%;
+        font-weight: bold;
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+        position: absolute;
+        bottom: 0%;
+        margin-bottom: 3%;
+    }
+
+
+    .coefficientContainer {
+        font-size: 90%;
+        width: 20%;
+        height: 100%;
+        color: var(--light-test-color);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+
+    }
+
+}

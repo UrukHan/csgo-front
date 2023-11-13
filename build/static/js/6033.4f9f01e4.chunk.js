@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkfront=self.webpackChunkfront||[]).push([[6033],{6033:function(e,t,c){e.exports=c.p+"static/media/Arcadia.439c972e4ed4d6ef8bbf.png"}}]);

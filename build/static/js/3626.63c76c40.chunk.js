@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkfront=self.webpackChunkfront||[]).push([[3626],{93626:function(t,a,e){t.exports=e.p+"static/media/LODIS.18a75f67f815a15ba10c.png"}}]);

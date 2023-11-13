@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkfront=self.webpackChunkfront||[]).push([[405],{405:function(e,t,a){e.exports=a.p+"static/media/Take Flyte.9e969a5dce361ac17067.png"}}]);

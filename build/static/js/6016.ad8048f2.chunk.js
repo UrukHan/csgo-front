@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkfront=self.webpackChunkfront||[]).push([[6016],{36016:function(e,s,t){e.exports=t.p+"static/media/Outsiders.1aaf67b29e8fe33c63fa.png"}}]);

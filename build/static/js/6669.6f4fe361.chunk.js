@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkfront=self.webpackChunkfront||[]).push([[6669],{6669:function(c,e,s){c.exports=s.p+"static/media/Coalesce.1a0cf8002502a84cb78c.png"}}]);

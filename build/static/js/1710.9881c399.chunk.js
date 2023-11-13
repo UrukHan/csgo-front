@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkfront=self.webpackChunkfront||[]).push([[1710],{1710:function(e,t,n){e.exports=n.p+"static/media/Permitta.e7e43efd3d6d41643e3e.png"}}]);

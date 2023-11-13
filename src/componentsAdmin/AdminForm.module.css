@@ -1,0 +1,60 @@
+
+.admin-modal {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 100;
+}
+
+.admin-modal-content {
+    width: 20%;
+    height: 40%;
+    background-color: var(--heder-color);
+    padding: 2%;
+    border: 1px solid var(--dark-test-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.send-pass-button {
+    background-color: var(--border-color);
+    font-size: 100%;
+    width: 50%;
+    height: 10%;
+    color: white;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    border: 1px solid var(--border-color);
+    transition-duration: 0.4s;
+}
+
+.send-pass-button:hover {
+    background-color: var(--dark-test-color);
+}
+.send-pass-button:active{
+    background-color: var(--blue-color);
+}
+
+@media (max-aspect-ratio: 1/1) {
+
+    .admin-modal-content {
+        width: 60%;
+        height: 35%;
+        background-color: var(--heder-color);
+        padding: 2%;
+        border: 1px solid var(--dark-test-color);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+}

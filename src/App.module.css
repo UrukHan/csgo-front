@@ -1,0 +1,122 @@
+:root {
+    --heder-color: rgba(45, 60, 70, 0.8);
+    --primary-color: rgba(30, 40, 45, 0.8);
+    --secondary-color: #14191e;
+    --border-color: #4b5a6e;
+    --font-family: 'Roboto', sans-serif;
+    --font-size: 2vh;
+    --white-color: rgba(232, 232, 232, 0.8);
+    --dark-test-color: #648296;
+    --mid-test-color: #84a2b6;
+    --light-test-color: #a0dcfa;
+    --blue-color: #3296ff;
+}
+
+@font-face {
+    font-family: 'BonvenoCF';
+    src: url('./fonts/BonvenoCF-Light.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'New_Cicle';
+    src: url('./fonts/New_Cicle_Gordita.ttf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+* {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(255, 255, 255, 0.4) var(--primary-color);
+}
+
+*::-webkit-scrollbar {
+    width: 8px;
+}
+
+*::-webkit-scrollbar-thumb {
+    background-color: rgba(255, 255, 255, 0.4);
+    border-radius: 4px;
+}
+
+*::-webkit-scrollbar-track {
+    background-color: var(--primary-color);
+    border-radius: 4px;
+}
+
+body {
+    background-color: var(--primary-color);
+    margin: 0;
+}
+
+.App {
+    height: 100vh;
+    width: 100%;
+    background-image: url('images/backgound.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center calc(50%);
+    font-family: var(--font-family);
+    font-size: var(--font-size);
+    background-color: var(--primary-color);
+    color: var(--white-color);
+    padding: 0rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.App-content {
+    height: 100%;
+    width: 50%;
+    margin: 0 auto;
+}
+
+.header-background {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 8%;
+    background-color: var(--heder-color);
+    z-index: 0;
+    border-bottom: 1px solid var(--border-color);
+}
+
+@media (max-aspect-ratio: 1/1) {
+
+    .App {
+        height: 100vh;
+        width:100vw;
+        background-image: url('images/backgound.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center calc(50%);
+        font-family: var(--font-family);
+        font-size: var(--font-size);
+        background-color: var(--primary-color);
+        color: var(--white-color);
+        padding: 0rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .App-content {
+        height: 100%;
+        width: 100%;
+        margin: 0 auto;
+
+    }
+
+    .header-background {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 8%;
+        background-color: var(--heder-color);
+        z-index: 0;
+    }
+}

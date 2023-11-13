@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkfront=self.webpackChunkfront||[]).push([[2860],{42860:function(t,c,e){t.exports=e.p+"static/media/TYLOO.df1076615b4cc8870a1f.png"}}]);

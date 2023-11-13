@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkfront=self.webpackChunkfront||[]).push([[4308],{4308:function(e,t,n){e.exports=n.p+"static/media/EPIC DUDES.217619e7834bb73115fe.png"}}]);

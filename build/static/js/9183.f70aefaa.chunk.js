@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkfront=self.webpackChunkfront||[]).push([[9183],{99183:function(e,t,n){e.exports=n.p+"static/media/Boston crab.5abb6d25a5e8e5b6b82e.png"}}]);

@@ -1,0 +1,283 @@
+.page {
+    height: 92%;
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.info {
+    height: 5%;
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    color: black;
+    background: linear-gradient(to right, var(--primary-color), var(--dark-test-color), var(--dark-test-color), var(--primary-color));
+    border-left: 1px solid var(--border-color);
+    border-right: 1px solid var(--border-color);
+    box-sizing: border-box;
+}
+
+.docs {
+    height: 3%;
+    width: 100%;
+    font-size: 75%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--primary-color);
+    border-left: 1px solid var(--border-color);
+    border-right: 1px solid var(--border-color);
+    color: var(--dark-test-color);
+    box-sizing: border-box;
+}
+
+.docs > * {
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+.doc-link {
+    color: var(--dark-test-color);
+    text-decoration: none;
+}
+
+.doc-link:hover {
+    color: var(--white-color);
+    text-decoration: underline;
+}
+
+.home-container {
+    height: 90%;
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    background-color: var(--primary-color);
+    border-left: 1px solid var(--border-color);
+    border-right: 1px solid var(--border-color);
+    box-sizing: border-box;
+}
+
+.language-container {
+    height: 5%;
+    width: 100%;
+    display: flex;
+}
+
+.language-subcontainer {
+    height: 100%;
+    width: 50%;
+    display: flex;
+}
+
+.language-button {
+    background-color: var(--border-color);
+    font-size: 90%;
+    width: 20%;
+    height: 100%;
+    color: var(--white-color);
+    text-align: center;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid var(--dark-test-color);
+}
+
+.language-button:hover {
+    background-color: var(--mid-test-color);
+}
+
+.language-button:active{
+    background-color: var(--mid-test-color);
+}
+
+.home-right {
+    display: flex;
+    height: 100%;
+    width: 50%;
+    flex-direction: column;
+    align-items: flex-start;
+    overflow: hidden;
+}
+
+.home-left {
+    display: flex;
+    height: 100%;
+    width: 50%;
+    flex-direction: column;
+    align-items: flex-start;
+    overflow: hidden;
+}
+
+.csgo-general-image {
+    height: 70%;
+    width: 100%;
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+.dota-general-image {
+    height: 70%;
+    width: 100%;
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+.general-text {
+    height: 5%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    font-family: "New_Cicle";
+    font-size: 150%;
+    margin-top: 3%;
+}
+
+.description-text {
+    height: 7%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    font-family: "New_Cicle";
+    color: var(--light-test-color);
+    font-size: 80%;
+    margin-top: 3%;
+    margin-left: 5%;
+}
+
+.transparent-button {
+    position: relative;
+    display: flex;
+    width: 100%;
+    height: 10%;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(to right, transparent, var(--border-color), var(--border-color), transparent);
+    border: none;
+    font-size: 100%;
+    color: var(--light-test-color);
+    text-decoration: none;
+}
+
+.transparent-button::before,
+.transparent-button::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 1px;
+}
+
+.transparent-button::before {
+    top: 0;
+    background: linear-gradient(to right, transparent, var(--light-test-color), transparent);
+}
+
+.transparent-button::after {
+    bottom: 0;
+    background: linear-gradient(to right, transparent, var(--light-test-color), transparent);
+}
+
+.transparent-button:active,
+.transparent-button:hover {
+    background: linear-gradient(to right, transparent, var(--dark-test-color), var(--dark-test-color), transparent);
+}
+
+@media (max-aspect-ratio: 1/1) {
+
+    .page {
+        height: 92%;
+        width: 99%;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+    }
+
+    .home-container {
+        height: 84.2%;
+        width: 100%;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: row;
+        background-color: var(--primary-color);
+        border-left: 1px solid var(--border-color);
+        border-right: 1px solid var(--border-color);
+        box-sizing: border-box;
+    }
+
+    .language-container {
+        height: 10%;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        font-size: 90%;
+    }
+
+    .language-subcontainer {
+        height: 50%;
+        width: 100%;
+        display: flex;
+    }
+
+    .general-text {
+        height: 10%;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        font-family: "New_Cicle";
+        font-size: 120%;
+    }
+    .description-text {
+        height: 15%;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        font-family: "New_Cicle";
+        color: var(--light-test-color);
+        font-size: 80%;
+    }
+    .csgo-general-image {
+        height: 50%;
+        width: 100%;
+        max-width: 100%;
+        max-height: 100%;
+        object-fit: contain;
+    }
+
+    .dota-general-image {
+        height: 50%;
+        width: 100%;
+        max-width: 100%;
+        max-height: 100%;
+        object-fit: contain;
+    }
+
+    .info {
+        height: 5%;
+        width: 100%;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        color: black;
+        background: var(--dark-test-color);
+        border-left: 1px solid var(--border-color);
+        border-right: 1px solid var(--border-color);
+        box-sizing: border-box;
+    }
+}

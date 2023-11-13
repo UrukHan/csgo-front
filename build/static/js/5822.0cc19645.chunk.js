@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkfront=self.webpackChunkfront||[]).push([[5822],{75822:function(e,t,c){e.exports=c.p+"static/media/BLUEJAYS.dfc593d756efb4286cbd.png"}}]);

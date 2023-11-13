@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkfront=self.webpackChunkfront||[]).push([[3891],{83891:function(e,t,n){e.exports=n.p+"static/media/DomiNation.71c4857d6e0c70b97fee.png"}}]);

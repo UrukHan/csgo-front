@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkfront=self.webpackChunkfront||[]).push([[7976],{17976:function(e,t,n){e.exports=n.p+"static/media/NKT.4c34084270e7370000a3.png"}}]);

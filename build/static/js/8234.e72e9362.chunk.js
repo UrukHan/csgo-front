@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkfront=self.webpackChunkfront||[]).push([[8234],{8234:function(e,t,n){e.exports=n.p+"static/media/O PLANO.1e88eb259a65e0425b71.png"}}]);

@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkfront=self.webpackChunkfront||[]).push([[3356],{53356:function(e,s,t){e.exports=t.p+"static/media/Nexus.0dbdaa39d37def65318c.png"}}]);

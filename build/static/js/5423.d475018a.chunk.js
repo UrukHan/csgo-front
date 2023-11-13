@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkfront=self.webpackChunkfront||[]).push([[5423],{35423:function(e,t,n){e.exports=n.p+"static/media/Into the Breach.014dae6af794e822ed68.png"}}]);

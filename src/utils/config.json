@@ -1,0 +1,23 @@
+{
+  "apiUrl": "https://back.neurobet.org",
+  "authorizationUrl": "https://auth.neurobet.org",
+  "paymentUrl": "https://pay.neurobet.org",
+
+  "maps": ["Ancient", "Anubis", "Inferno", "Mirage", "Nuke", "Overpass", "Vertigo"],
+  "rounds": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14],
+  "price": "18",
+  "approveAmount": "180",
+
+  "contractPolygon": "0x8d606763bA41A9f00F3ADb61E5900732A2b90FeB",
+  "USDTPolygon": "0xc2132D05D31c914a87C6611C10748AEb04B58e8F",
+  "USDCPolygon": "0x2791Bca1f2de4661ED88A30C99A7a9449Aa84174",
+  "contractBinance": "0xbaB3652ed8dd72b1513df0cE8a1182437F1724A7",
+  "USDTBinance": "0x55d398326f99059ff775485246999027b3197955",
+  "USDCBinance": "0x8ac76a51cc950d9822d68b83fe1ad97b32cd580d",
+
+  "contractMumbai": "0xeb0942e6E9AD5987412b4b7ca9339F3Cb958fC03",
+  "USDTMumbai": "0x1172B3342BB03EcBa5D6D19fC71972774C20c89d",
+  "USDCMumbai": "0x008ec7915F994e9D6B9EEb767b83aFB5eE55D5DC",
+
+  "ownerAddress": "0x1C3f50CA4f8b96fAa6ab1020D9C54a44ADfAc814"
+}

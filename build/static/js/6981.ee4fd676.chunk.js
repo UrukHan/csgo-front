@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkfront=self.webpackChunkfront||[]).push([[6981],{86981:function(a,n,t){a.exports=t.p+"static/media/Sangal.3d69a758bc548438adb8.png"}}]);

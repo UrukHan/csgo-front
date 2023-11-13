@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkfront=self.webpackChunkfront||[]).push([[7599],{57599:function(e,t,c){e.exports=c.p+"static/media/VERTEX.ab11c257466e036df39c.png"}}]);

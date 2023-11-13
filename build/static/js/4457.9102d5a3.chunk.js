@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkfront=self.webpackChunkfront||[]).push([[4457],{44457:function(t,c,e){t.exports=e.p+"static/media/NIP Impact.b14923baecf87202c386.png"}}]);

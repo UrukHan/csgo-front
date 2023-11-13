@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkfront=self.webpackChunkfront||[]).push([[4260],{44260:function(e,t,c){e.exports=c.p+"static/media/Steel Helmet.fa4cf96877c9da047191.png"}}]);

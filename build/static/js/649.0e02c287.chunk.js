@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkfront=self.webpackChunkfront||[]).push([[649],{90649:function(e,t,n){e.exports=n.p+"static/media/Eternal Fire.dfb9a0ae05712ed0ec09.png"}}]);

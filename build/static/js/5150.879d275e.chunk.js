@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkfront=self.webpackChunkfront||[]).push([[5150],{25150:function(f,n,t){f.exports=t.p+"static/media/Grayhound.310d505f0d9abcf1f3f6.png"}}]);

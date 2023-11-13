@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkfront=self.webpackChunkfront||[]).push([[7398],{37398:function(n,s,t){n.exports=t.p+"static/media/Villainous.697046b4f7a01c3b6b4f.png"}}]);

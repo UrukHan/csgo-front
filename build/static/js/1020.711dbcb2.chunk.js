@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkfront=self.webpackChunkfront||[]).push([[1020],{71020:function(c,e,t){c.exports=t.p+"static/media/Let us cook.c1cbc721e5b2a33159f4.png"}}]);

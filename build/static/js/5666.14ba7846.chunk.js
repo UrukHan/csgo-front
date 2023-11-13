@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkfront=self.webpackChunkfront||[]).push([[5666],{75666:function(e,n,t){e.exports=t.p+"static/media/Illuminar.447b0ae64e9e4d923d7a.png"}}]);

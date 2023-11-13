@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkfront=self.webpackChunkfront||[]).push([[3288],{13288:function(e,a,c){e.exports=c.p+"static/media/ALTERNATE aTTaX.da406c3523face4c875e.png"}}]);

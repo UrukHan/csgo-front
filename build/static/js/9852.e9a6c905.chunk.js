@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkfront=self.webpackChunkfront||[]).push([[9852],{9852:function(e,t,c){e.exports=c.p+"static/media/Rare Atom.9998148c1bec5b8bcb1e.png"}}]);

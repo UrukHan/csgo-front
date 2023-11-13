@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkfront=self.webpackChunkfront||[]).push([[2459],{92459:function(e,t,n){e.exports=n.p+"static/media/fnatic.180987680e5de5df97a5.png"}}]);

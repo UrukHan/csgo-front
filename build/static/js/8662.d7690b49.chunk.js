@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkfront=self.webpackChunkfront||[]).push([[8662],{28662:function(t,e,s){t.exports=s.p+"static/media/Virtus.pro.84166c1afb03713edfa8.png"}}]);

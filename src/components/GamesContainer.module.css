@@ -1,0 +1,64 @@
+
+.games-container {
+    height: 100%;
+    width: 35%;
+    background-color: var(--primary-color);
+}
+
+.games-list {
+    font-family: 'New_Cicle';
+    font-size: 140%;
+    overflow-y: auto;
+    height: 95%;
+    padding: 2%;
+    line-height: 100%;
+    border-left: 1px solid var(--border-color);
+}
+
+.game-date {
+    display: block;
+    color: var(--dark-test-color);
+    font-family: 'New_Cicle';
+    font-weight: bold;
+    font-size: 80%;
+    line-height: 100%;
+    margin-bottom: -5%;
+}
+
+.games-list div:hover {
+    background-color: var(--border-color);
+    color: white;
+    cursor: pointer;
+}
+
+.games-list div {
+    margin-bottom: 2%;
+}
+
+@media (max-aspect-ratio: 1/1) {
+
+    .games-container {
+        background-color: var(--primary-color);
+        height: 40%;
+        width: 100%;
+    }
+
+    .game-date {
+        display: block;
+        color: var(--dark-test-color);
+        font-family: 'New_Cicle';
+        font-weight: bold;
+        font-size: 60%;
+    }
+
+    .games-list {
+        font-family: 'New_Cicle';
+        font-size: 120%;
+        overflow-y: auto;
+        height: 90%;
+        line-height: 100%;
+        white-space: nowrap;
+        border-top: 1px solid var(--border-color);
+        border-left: 0px solid var(--border-color);
+    }
+}

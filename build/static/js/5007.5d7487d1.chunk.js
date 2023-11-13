@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkfront=self.webpackChunkfront||[]).push([[5007],{35007:function(e,c,t){e.exports=t.p+"static/media/IHC.cb539c2f600fdb6ce2ea.png"}}]);

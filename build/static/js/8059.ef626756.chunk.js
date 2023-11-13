@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkfront=self.webpackChunkfront||[]).push([[8059],{68059:function(e,n,s){e.exports=s.p+"static/media/Boca Juniors.a18e961fb49a48632e68.png"}}]);
