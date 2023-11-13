@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkfront=self.webpackChunkfront||[]).push([[1780],{41780:function(e,n,t){e.exports=t.p+"static/media/NAVI Junior.368e6d72a412a692988f.png"}}]);

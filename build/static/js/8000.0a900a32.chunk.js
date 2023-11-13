@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkfront=self.webpackChunkfront||[]).push([[8e3],{38e3:function(e,t,s){e.exports=s.p+"static/media/Budapest Five.2760b6f7f885a9ebe0b8.png"}}]);

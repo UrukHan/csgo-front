@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkfront=self.webpackChunkfront||[]).push([[5721],{15721:function(c,e,s){c.exports=s.p+"static/media/los kogutos.c4ac01bfe05cce262647.png"}}]);

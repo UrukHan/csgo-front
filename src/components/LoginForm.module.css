@@ -1,0 +1,189 @@
+
+.login-modal {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 100;
+}
+
+.login-modal-content {
+    width: 20%;
+    height: 40%;
+    background-color: var(--heder-color);
+    padding: 2%;
+    border: 1px solid var(--dark-test-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-buttons {
+    width: 100%;
+    height: 15%;
+    font-size: 100%;
+}
+
+.login-empty {
+    width: 100%;
+    height: 10%;
+    font-size: 100%;
+}
+
+.confirm-empty {
+    width: 100%;
+    height: 5%;
+    font-size: 100%;
+}
+
+.login-button {
+    background-color: var(--dark-test-color);
+    font-size: 100%;
+    width: 50%;
+    height: 100%;
+    color: white;
+    padding: 5%;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    border: 1px solid var(--light-test-color);
+    transition-duration: 0.4s;
+}
+
+.login-button-active {
+    background-color: var(--border-color);
+    font-size: 100%;
+    width: 50%;
+    height: 100%;
+    color: white;
+    padding: 5%;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    border: 1px solid var(--light-test-color);
+    transition-duration: 0.4s;
+}
+
+.confirm-button {
+    background-color: var(--dark-test-color);
+    font-size: 100%;
+    width: 100%;
+    height: 15%;
+    color: white;
+    padding: 5%;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    border: 1px solid var(--light-test-color);
+    transition-duration: 0.4s;
+}
+
+.send-button {
+    background-color: var(--dark-test-color);
+    font-size: 100%;
+    width: 100%;
+    height: 20%;
+    color: white;
+    padding: 5%;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    border: 1px solid var(--light-test-color);
+    transition-duration: 0.4s;
+}
+
+.send-button:hover,
+.login-button:hover {
+    background-color: var(--blue-color);
+}
+
+.send-button:active,
+.login-button:active{
+    background-color: var(--heder-color);
+}
+
+form {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+input {
+    width: 95%;
+    height: 10%;
+    font-size: 80%;
+    margin-bottom: 10px;
+    padding: 2%;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.checkbox-container {
+    width: 90%;
+    height: 15.7%;
+    display: flex;
+    align-items: center;
+}
+
+.checkbox-box {
+    display: inline-block;
+    border: 2px solid #000;
+    font-size: 100%;
+    border-radius: 5px;
+    cursor: pointer;
+    position: relative;
+    margin-right: 5%;
+    background-color: #fff;
+    padding: 4%;
+}
+
+.checkmark {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 100%;
+    color: #000;
+}
+
+.checkbox-label {
+    font-size: 100%;
+}
+
+.error-message {
+    width: 90%;
+    height: 15%;
+    font-size: 100%;
+}
+
+.error-message-code {
+    width: 90%;
+    height: 40%;
+    font-size: 100%;
+}
+
+@media (max-aspect-ratio: 1/1) {
+
+    .login-modal-content {
+        width: 60%;
+        height: 35%;
+        background-color: var(--heder-color);
+        padding: 2%;
+        border: 1px solid var(--dark-test-color);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+}

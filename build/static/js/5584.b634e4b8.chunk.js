@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkfront=self.webpackChunkfront||[]).push([[5584],{25584:function(c,e,n){c.exports=n.p+"static/media/sYnck.cb6f0f30ace3a6d553d8.png"}}]);

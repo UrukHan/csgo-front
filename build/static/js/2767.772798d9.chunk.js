@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkfront=self.webpackChunkfront||[]).push([[2767],{32767:function(e,n,t){e.exports=t.p+"static/media/GamerLegion.02c6b78a9bd6808b20fb.png"}}]);

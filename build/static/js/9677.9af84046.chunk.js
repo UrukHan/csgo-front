@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkfront=self.webpackChunkfront||[]).push([[9677],{29677:function(a,n,s){a.exports=s.p+"static/media/Ninjas in Pyjamas.85410a14afcda923b67a.png"}}]);

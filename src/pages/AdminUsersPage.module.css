@@ -1,0 +1,146 @@
+.page {
+    height: 92%;
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    background-color: var(--primary-color);
+}
+
+.users-container {
+    height: 80%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.users-chose {
+    height: 10%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+
+}
+
+.users-correct {
+    height: 10%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+
+}
+
+.user-input {
+    height: 50%;
+    width: 40%;
+    padding: 0%;
+    margin-top: 0.5%;
+}
+
+.user-date {
+    height: 50%;
+    width: 15%;
+    padding: 0%;
+    margin-left: 3%;
+    margin-top: 1%;
+}
+
+.user-subscribe {
+    height: 50%;
+    width: 20%;
+    font-size: 80%;
+    padding: 0%;
+}
+
+.user-block-container {
+    height: 50%;
+    width: 15%;
+}
+
+.user-block {
+    height: 50%;
+    width: 40%;
+    padding: 0%;
+}
+
+.user-status {
+    height: 100%;
+    width: 40%;
+}
+
+.user-button {
+    background-color: var(--border-color);
+    font-size: 100%;
+    width: 20%;
+    height: 50%;
+    color: white;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    border: 1px solid var(--light-test-color);
+    transition-duration: 0.4s;
+}
+
+.user-button:hover {
+    background-color: var(--dark-test-color);
+}
+.user-button:active {
+    background-color: var(--blue-color);
+}
+
+.user-button-disabled {
+    background-color: var(--heder-color);
+    font-size: 100%;
+    width: 50%;
+    height: 100%;
+    color: var(--border-color);
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    border: 1px solid var(--border-color);
+    transition-duration: 0.4s;
+}
+
+@media (max-aspect-ratio: 1/1) {
+
+    .page {
+        height: 92.5%;
+        width: 100%;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        background-color: var(--primary-color);
+    }
+
+    .date-inputs-container {
+        height: 15%;
+        width: 90%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        margin-top: 12%;
+        margin-left: 5%;
+    }
+
+    .table-container {
+        height: 60%;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        background-color: var(--heder-color);
+        overflow: auto;
+        font-size: 75%;
+        margin-top: 5%;
+    }
+}

@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkfront=self.webpackChunkfront||[]).push([[6054],{86054:function(e,n,s){e.exports=s.p+"static/media/RED Canids.e2bcb8894b6da67e0461.png"}}]);

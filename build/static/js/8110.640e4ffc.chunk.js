@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkfront=self.webpackChunkfront||[]).push([[8110],{88110:function(e,c,t){e.exports=t.p+"static/media/W7M Academy.4b92c668e5a2e92165c9.png"}}]);

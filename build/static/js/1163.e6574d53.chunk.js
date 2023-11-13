@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkfront=self.webpackChunkfront||[]).push([[1163],{71163:function(e,t,f){e.exports=f.p+"static/media/JANO.1654afae0dd98c110f2d.png"}}]);

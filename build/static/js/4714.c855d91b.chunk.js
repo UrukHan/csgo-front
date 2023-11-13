@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkfront=self.webpackChunkfront||[]).push([[4714],{14714:function(e,d,t){e.exports=t.p+"static/media/Tricked.cb1ddd78debe014dd0db.png"}}]);

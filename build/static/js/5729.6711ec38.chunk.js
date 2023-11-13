@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkfront=self.webpackChunkfront||[]).push([[5729],{5729:function(t,e,s){t.exports=s.p+"static/media/Party Astronauts.6e576fe649917477e318.png"}}]);

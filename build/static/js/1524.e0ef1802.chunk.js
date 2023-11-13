@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkfront=self.webpackChunkfront||[]).push([[1524],{31524:function(e,n,s){e.exports=s.p+"static/media/Ignis Serpens.d556c26c0d4f91863216.png"}}]);

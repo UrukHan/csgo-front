@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkfront=self.webpackChunkfront||[]).push([[1066],{11066:function(e,t,n){e.exports=n.p+"static/media/PGE Turow.28969b922d710af3ea8d.png"}}]);

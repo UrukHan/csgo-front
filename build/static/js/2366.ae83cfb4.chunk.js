@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkfront=self.webpackChunkfront||[]).push([[2366],{92366:function(s,t,b){s.exports=b.p+"static/media/Sharks.36bcb50a2947d9db7bbc.png"}}]);

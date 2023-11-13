@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkfront=self.webpackChunkfront||[]).push([[5870],{15870:function(e,n,t){e.exports=t.p+"static/media/TheMongolz.c4ad7d18e527fa575330.png"}}]);

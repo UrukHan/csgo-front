@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkfront=self.webpackChunkfront||[]).push([[7753],{27753:function(e,t,c){e.exports=c.p+"static/media/HYDRA.5ef55969781c4c05e21a.png"}}]);

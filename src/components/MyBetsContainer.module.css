@@ -1,0 +1,55 @@
+.my-bets-container {
+    height: 100%;
+    width: 100%;
+    background-color: var(--primary-color);
+    border: 1px solid var(--dark-test-color);
+}
+
+.my-bets-list {
+    font-family: 'New_Cicle';
+    font-size: 120%;
+    overflow-y: auto;
+    height: 100%;
+
+}
+
+.my-bets-date {
+    display: block;
+    color: var(--dark-test-color);
+    font-family: 'New_Cicle';
+    font-weight: bold;
+    font-size: 80%;
+    line-height: 100%;
+    margin-bottom: -5%;
+
+}
+
+.my-bets-list div:hover {
+    background-color: var(--border-color);
+    color: white;
+    cursor: pointer;
+}
+
+
+.my-bets-green {
+    color: limegreen;
+}
+
+.my-bets-red {
+    color: red;
+}
+
+.my-bets-blue {
+    color: #7baaf7;
+}
+
+
+.row-even {
+    background-color: var(--primary-color);
+    padding: 1%;
+}
+
+.row-odd {
+    background-color: var(--secondary-color);
+    padding: 1%;
+}

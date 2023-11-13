@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkfront=self.webpackChunkfront||[]).push([[3686],{33686:function(e,t,f){e.exports=f.p+"static/media/VOYVODA.e5839959a221e2f2a04f.png"}}]);

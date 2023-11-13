@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkfront=self.webpackChunkfront||[]).push([[5143],{5143:function(e,f,t){e.exports=t.p+"static/media/FLUFFY AIMERS.ddd41e280ff904fd937e.png"}}]);

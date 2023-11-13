@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkfront=self.webpackChunkfront||[]).push([[1712],{31712:function(n,e,s){n.exports=s.p+"static/media/Lynn Vision.42433fe0ccd5f1384237.png"}}]);

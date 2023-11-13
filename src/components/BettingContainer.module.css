@@ -1,0 +1,89 @@
+
+.bettings-container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 65%;
+
+}
+
+.bet-teams-container {
+    display: flex;
+    flex-direction: row;
+    height: 15%;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.bet-auto {
+    display: flex;
+    font-size: 70%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 50%;
+    width: 33.33%;
+    border-right: 1px solid var(--heder-color);
+}
+
+.bet-team {
+    display: flex;
+    font-size: 70%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 20%;
+    width: 33.33%;
+
+}
+
+.bet-maps-container {
+    display: flex;
+    flex-direction: row;
+    height: 6%;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    border-top: 1px solid var(--heder-color);
+}
+
+.bet-maps {
+    display: flex;
+    font-size: 50%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 31%;
+
+}
+
+.bet-map {
+    display: flex;
+    font-size: 50%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 23%;
+
+}
+
+@media (max-aspect-ratio: 1/1) {
+    .bet-teams-container {
+        display: flex;
+        flex-direction: row;
+        height: 18%;
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .bettings-container {
+        display: flex;
+        flex-direction: column;
+        height: 60%;
+        width: 100%;
+    }
+}

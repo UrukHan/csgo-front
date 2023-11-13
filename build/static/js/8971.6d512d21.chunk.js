@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkfront=self.webpackChunkfront||[]).push([[8971],{8971:function(c,e,t){c.exports=t.p+"static/media/ENCE Academy.dbb0874d4f1503d1bcc2.png"}}]);

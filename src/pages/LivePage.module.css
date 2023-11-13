@@ -1,0 +1,55 @@
+.map-blocks-container {
+    display: flex;
+    flex-direction: column;
+    height: 41.9%;
+    width: 100%;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.filler-container {
+    flex-grow: 1;
+    background-color: var(--primary-color);
+    height: 38vh;
+    display: flex;
+}
+
+.page {
+    height: 92%;
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+
+@media (max-aspect-ratio: 1/1) {
+
+    .team-selection-container {
+        background-color: var(--primary-color);
+        border-bottom: 1px solid var(--border-color);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        box-sizing: border-box;
+        height: 10%;
+    }
+
+    .map-blocks-container {
+        display: flex;
+        flex-direction: column;
+        height: 34%;
+        width: 100%;
+        border-bottom: 1px solid var(--border-color);
+    }
+
+    .filler-container {
+        flex-grow: 1;
+        background-color: var(--primary-color);
+        height: 47.9%;
+        display: flex;
+        flex-direction: column;
+    }
+
+}

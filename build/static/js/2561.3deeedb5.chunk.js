@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkfront=self.webpackChunkfront||[]).push([[2561],{42561:function(t,a,c){t.exports=c.p+"static/media/Vitality.8aad22193dc0061c6ada.png"}}]);

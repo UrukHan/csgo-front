@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkfront=self.webpackChunkfront||[]).push([[3754],{83754:function(e,t,a){e.exports=a.p+"static/media/Zero Tenacity.8531fcaa9a5843c14e60.png"}}]);

@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkfront=self.webpackChunkfront||[]).push([[1332],{81332:function(e,s,n){e.exports=n.p+"static/media/9 Pandas Fearless.452ce96efbb80e6fd228.png"}}]);

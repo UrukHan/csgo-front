@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkfront=self.webpackChunkfront||[]).push([[4514],{74514:function(e,p,t){e.exports=t.p+"static/media/Newhappy.10cf5d19087672494f50.png"}}]);

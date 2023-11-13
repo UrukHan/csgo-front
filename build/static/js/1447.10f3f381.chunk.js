@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkfront=self.webpackChunkfront||[]).push([[1447],{91447:function(e,t,n){e.exports=n.p+"static/media/timbermen.477977f3ebe75be74620.png"}}]);

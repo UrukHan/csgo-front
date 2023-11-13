@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkfront=self.webpackChunkfront||[]).push([[5676],{15676:function(e,t,c){e.exports=c.p+"static/media/PALOMA.6d267c937b8773ecd467.png"}}]);

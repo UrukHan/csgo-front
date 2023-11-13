@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkfront=self.webpackChunkfront||[]).push([[3272],{33272:function(e,t,b){e.exports=b.p+"static/media/Eternal Fire Academy.0b30bfadb0f4bb5379b1.png"}}]);

@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkfront=self.webpackChunkfront||[]).push([[5533],{15533:function(e,n,t){e.exports=t.p+"static/media/GenOne.bc152275d4587c6b3186.png"}}]);

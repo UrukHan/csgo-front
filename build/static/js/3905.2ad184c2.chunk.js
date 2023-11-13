@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkfront=self.webpackChunkfront||[]).push([[3905],{33905:function(t,c,e){t.exports=e.p+"static/media/Mythic.4bb293355936bf04423c.png"}}]);

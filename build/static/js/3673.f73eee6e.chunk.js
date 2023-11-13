@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkfront=self.webpackChunkfront||[]).push([[3673],{3673:function(n,s,t){n.exports=t.p+"static/media/Nouns.85cd62a59288cad3bb81.png"}}]);

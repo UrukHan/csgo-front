@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkfront=self.webpackChunkfront||[]).push([[9718],{99718:function(e,t,n){e.exports=n.p+"static/media/Make Your Destiny.da301d419a739c35d54c.png"}}]);

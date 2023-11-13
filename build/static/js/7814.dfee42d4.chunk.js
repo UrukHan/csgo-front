@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkfront=self.webpackChunkfront||[]).push([[7814],{67814:function(e,t,a){e.exports=a.p+"static/media/Davenport University.adb14a6d2ba10acbe767.png"}}]);

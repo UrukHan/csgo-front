@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkfront=self.webpackChunkfront||[]).push([[9681],{99681:function(e,n,t){e.exports=t.p+"static/media/TeamOne.6340502675af3bcbf118.png"}}]);

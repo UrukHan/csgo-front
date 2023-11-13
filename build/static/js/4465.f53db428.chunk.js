@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkfront=self.webpackChunkfront||[]).push([[4465],{24465:function(f,t,e){f.exports=e.p+"static/media/ODDIK.2a2d92f2f68af26cf29f.png"}}]);

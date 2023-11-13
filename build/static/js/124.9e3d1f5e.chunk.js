@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkfront=self.webpackChunkfront||[]).push([[124],{124:function(e,n,s){e.exports=s.p+"static/media/Snakes Den.925884632cdb1fa65036.png"}}]);

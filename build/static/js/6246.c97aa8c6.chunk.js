@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkfront=self.webpackChunkfront||[]).push([[6246],{76246:function(c,a,e){c.exports=e.p+"static/media/Black Dragons.a95d992d68baf3cbcfec.png"}}]);

@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkfront=self.webpackChunkfront||[]).push([[8299],{28299:function(e,s,t){e.exports=t.p+"static/media/Twisted Minds.3e9e7e57e944c312aa81.png"}}]);
