@@ -1,0 +1,107 @@
+.page {
+    height: 92%;
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    background-color: var(--primary-color);
+}
+
+.referral-container {
+    height: 90%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.date-inputs-container {
+    height: 10%;
+    width: 90%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 3%;
+    margin-left: 5%;
+}
+
+.date-input-container {
+    width: 45%;
+}
+
+.date-input {
+    width: 100%;
+    height: 30%;
+    background-color: var(--border-color);
+    color: var(--light-test-color);
+    padding: 1%;
+    border: none;
+    border-radius: 1%;
+    font-size: 100%;
+}
+
+.status-message {
+    height: 10%;
+    width: 90%;
+}
+
+.table-container {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    background-color: var(--primary-color);
+    overflow: auto;
+    flex-direction: column;
+}
+
+.table-row {
+    width: 100%;
+    cursor: pointer;
+    color: var(--light-test-color);
+    display: flex;
+    flex-direction: column;
+    padding: 1% 0;
+}
+.table-row:nth-child(even) {
+    background-color: var(--heder-color);
+}
+.table-row:nth-child(odd) {
+    background-color: var(--primary-color);
+}
+
+.row-item-full, .row-item-status, .row-item-date, row-item-amount {
+    padding-left: 5%;
+}
+
+.row-item {
+    width: 95%;
+    padding-left: 5%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.row-item-amount {
+    flex-grow: 2;
+}
+
+.row-item-status {
+    flex-grow: 1;
+}
+
+.row-item-date {
+    flex-grow: 2;
+}
+
+.row-item-type-transction {
+    flex-grow: 1;
+}
+
+.row-item-type-pay {
+    flex-grow: 1;
+}
+

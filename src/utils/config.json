@@ -5,19 +5,28 @@
 
   "maps": ["Ancient", "Anubis", "Inferno", "Mirage", "Nuke", "Overpass", "Vertigo"],
   "rounds": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14],
-  "price": "18",
+  "price": "15",
   "approveAmount": "180",
 
-  "contractPolygon": "0x8d606763bA41A9f00F3ADb61E5900732A2b90FeB",
+  "contractPolygon": "0x0fDD33c37DeAA0B7e3FafdBD58A210dE897Fea7C",
   "USDTPolygon": "0xc2132D05D31c914a87C6611C10748AEb04B58e8F",
-  "USDCPolygon": "0x2791Bca1f2de4661ED88A30C99A7a9449Aa84174",
-  "contractBinance": "0xbaB3652ed8dd72b1513df0cE8a1182437F1724A7",
-  "USDTBinance": "0x55d398326f99059ff775485246999027b3197955",
-  "USDCBinance": "0x8ac76a51cc950d9822d68b83fe1ad97b32cd580d",
+  "USDCPolygon": "0x3c499c542cEF5E3811e1192ce70d8cC03d5c3359",
+  "decimalPolygon": 1000000,
 
   "contractMumbai": "0xeb0942e6E9AD5987412b4b7ca9339F3Cb958fC03",
   "USDTMumbai": "0x1172B3342BB03EcBa5D6D19fC71972774C20c89d",
   "USDCMumbai": "0x008ec7915F994e9D6B9EEb767b83aFB5eE55D5DC",
+  "decimalMumbai": 1000000000000000000,
+
+  "contractBinance": "0xf7D7F799346756191c20113BcA1498ba77f94f5c",
+  "USDTBinance": "0x55d398326f99059fF775485246999027B3197955",
+  "USDCBinance": "0x8AC76a51cc950d9822D68b83fE1Ad97B32Cd580d",
+  "decimalBinance": 1000000000000000000,
+
+  "contractBinanceTest": "0xdE3e84fBb3F4CDFB8638Db0B0832E25407c88aec",
+  "USDTBinanceTest": "0x0fDD33c37DeAA0B7e3FafdBD58A210dE897Fea7C",
+  "USDCBinanceTest": "0x47651105D41715a9BF48ec01098DD55d1e71f6F5",
+  "decimalBinanceTest": 1000000000000000000,
 
   "ownerAddress": "0x1C3f50CA4f8b96fAa6ab1020D9C54a44ADfAc814"
 }

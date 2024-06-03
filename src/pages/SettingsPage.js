@@ -2,7 +2,7 @@ import React, {useContext, useEffect, useState} from 'react';
 import { AccessContext } from "../AccessContext";
 import styles from './SettingsPage.module.css';
 import SubscriptionModal from "../components/SubscriptionModal";
-import CryptoModal from "../components/CryptoModal";
+import CryptoModalPay from "../components/CryptoModalPay";
 import {useTranslation} from "react-i18next";
 
 function SettingsPage( { stripePromise } ) {
@@ -56,7 +56,7 @@ function SettingsPage( { stripePromise } ) {
                 {t("logout")}
             </button>
             {showSubscribeModal && <SubscriptionModal onClose={() => setShowSubscribeModal(false)} stripePromise={stripePromise} />}
-            {showCryptoModal && <CryptoModal onClose={() => setShowCryptoModal(false)} />}
+            {showCryptoModal && <CryptoModalPay onClose={() => setShowCryptoModal(false)} />}
         </div>
     );
 }

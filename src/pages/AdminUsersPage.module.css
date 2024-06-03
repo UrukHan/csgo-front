@@ -9,7 +9,16 @@
     background-color: var(--primary-color);
 }
 
-.users-container {
+.user-container {
+    height: 15%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.list-container {
     height: 80%;
     width: 100%;
     display: flex;
@@ -19,7 +28,7 @@
 }
 
 .users-chose {
-    height: 10%;
+    height: 35%;
     width: 100%;
     display: flex;
     flex-direction: row;
@@ -29,7 +38,7 @@
 }
 
 .users-correct {
-    height: 10%;
+    height: 35%;
     width: 100%;
     display: flex;
     flex-direction: row;
@@ -40,9 +49,17 @@
 
 .user-input {
     height: 50%;
-    width: 40%;
+    width: 30%;
     padding: 0%;
     margin-top: 0.5%;
+}
+
+.users-input {
+    height: 70%;
+    width: 15%;
+    padding: 0%;
+    margin-top: 0.5%;
+    align-items: center;
 }
 
 .user-date {
@@ -72,8 +89,9 @@
 }
 
 .user-status {
-    height: 100%;
-    width: 40%;
+    height: 30%;
+    width: 100%;
+    margin-left: 5%;
 }
 
 .user-button {
@@ -81,6 +99,7 @@
     font-size: 100%;
     width: 20%;
     height: 50%;
+    margin-bottom: 1%;
     color: white;
     cursor: pointer;
     text-align: center;
@@ -97,6 +116,28 @@
     background-color: var(--blue-color);
 }
 
+.users-button {
+    background-color: var(--border-color);
+    font-size: 100%;
+    width: 15%;
+    height: 70%;
+    color: white;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    border: 1px solid var(--light-test-color);
+    transition-duration: 0.4s;
+    align-items: center;
+}
+
+.users-button:hover {
+    background-color: var(--dark-test-color);
+}
+.users-button:active {
+    background-color: var(--blue-color);
+}
+
 .user-button-disabled {
     background-color: var(--heder-color);
     font-size: 100%;
@@ -109,6 +150,82 @@
     display: inline-block;
     border: 1px solid var(--border-color);
     transition-duration: 0.4s;
+}
+
+.table-container {
+    height: 80%;
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    background-color: var(--primary-color);
+    overflow: auto;
+    flex-direction: column;
+}
+
+
+.table-row {
+    width: 100%;
+    cursor: pointer;
+    color: var(--light-test-color);
+    display: flex;
+    flex-direction: column;
+    padding: 1% 0;
+}
+.table-row:nth-child(even) {
+    background-color: var(--heder-color);
+}
+.table-row:nth-child(odd) {
+    background-color: var(--primary-color);
+}
+
+.row-item-full, .row-item-email, .row-item-status, .row-item-date , .row-item-amount {
+    padding-left: 5%;
+}
+
+.row-item {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.pagination-container {
+    height: 5%;
+    width: 90%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+
+.date-inputs-container {
+    height: 10%;
+    width: 90%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 3%;
+    margin-left: 5%;
+}
+
+.date-input-container {
+    width: 45%;
+}
+
+.status-message {
+    height: 5%;
+    width: 90%;
+}
+
+.date-input {
+    width: 100%;
+    height: 30%;
+    background-color: var(--border-color);
+    color: var(--light-test-color);
+    padding: 1%;
+    border: none;
+    border-radius: 1%;
+    font-size: 100%;
 }
 
 @media (max-aspect-ratio: 1/1) {
@@ -134,7 +251,7 @@
     }
 
     .table-container {
-        height: 60%;
+        height: 80%;
         width: 100%;
         display: flex;
         justify-content: center;

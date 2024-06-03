@@ -131,12 +131,13 @@
     color: var(--white-color);
 }
 
-.row-item-full, .row-item-email, .row-item-status, .row-item-date {
+.row-item-full, .row-item-email, .row-item-status, .row-item-date, .row-item-type-transction, .row-item-type-pay {
     padding-left: 5%;
 }
 
 .row-item {
-    width: 100%;
+    width: 95%;
+    padding-left: 5%;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -152,6 +153,14 @@
 
 .row-item-date {
     flex-grow: 2;
+}
+
+.row-item-type-transction {
+    flex-grow: 1;
+}
+
+.row-item-type-pay {
+    flex-grow: 1;
 }
 
 @media (max-aspect-ratio: 1/1) {

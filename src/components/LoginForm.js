@@ -3,8 +3,12 @@ import axios from 'axios';
 import styles from './LoginForm.module.css';
 import { AccessContext } from "../AccessContext";
 import config from "../utils/config.json";
+import {useTranslation} from "react-i18next";
 
 const LoginForm = ({ onClose }) => {
+
+    const { t } = useTranslation();
+
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [repeatPassword, setRepeatPassword] = useState('');
@@ -41,10 +45,12 @@ const LoginForm = ({ onClose }) => {
     };
 
     const handleSendData = async () => {
+        const referralId = localStorage.getItem('referralId') || '';
         const url = showRepeatPassword ? `${config.authorizationUrl}/api/v1/register` : `${config.authorizationUrl}/api/v1/login`;
         const action = showRepeatPassword ? onSignIn : onLogin;
         try {
-            const response = await axios.post(url, { email, password });
+            const data = showRepeatPassword ? { email, password, referralId } : { email, password };
+            const response = await axios.post(url, data);
 
             if (response.status === 200) {
                 if (showRepeatPassword) {
@@ -72,10 +78,10 @@ const LoginForm = ({ onClose }) => {
         try {
             const response = await axios.post(`${config.authorizationUrl}/api/v1/resend_code`, { email });
             if (response.status === 200) {
-                setError("Verification code sent again. Please check your email.");
+                setError(t('error-a'));
             }
         } catch (error) {
-            setError("Failed to resend code: " + error.message);
+            setError(t('error-b') + error.message);
         }
     };
 
@@ -83,7 +89,7 @@ const LoginForm = ({ onClose }) => {
         event.preventDefault();
 
         if (verificationCode === "") {
-            setError("Enter a code");
+            setError(t('error-c'));
             return;
         }
 
@@ -128,15 +134,15 @@ const LoginForm = ({ onClose }) => {
                             type="text"
                             value={verificationCode}
                             onChange={(e) => setVerificationCode(e.target.value)}
-                            placeholder="Verification Code"
+                            placeholder={t('verify-code')}
                         />
                         <div className={styles['error-message-code']}>{error}</div>
                         <button type="submit" className={`${styles['confirm-button']}`}>
-                            CONFIRM
+                            {t('confirm')}
                         </button>
                         <div className={styles['confirm-empty']}>{""}</div>
                         <button type="button" onClick={handleResendCode} className={`${styles['confirm-button']}`}>
-                            RESEND CODE
+                            {t('resend-code')}
                         </button>
                     </form>
                 ) : (
@@ -158,20 +164,20 @@ const LoginForm = ({ onClose }) => {
                             type="email"
                             value={email}
                             onChange={(e) => setEmail(e.target.value)}
-                            placeholder="Email"
+                            placeholder={t('email')}
                         />
                         <input
                             type="password"
                             value={password}
                             onChange={(e) => setPassword(e.target.value)}
-                            placeholder="Password"
+                            placeholder={t('password')}
                         />
                         {showRepeatPassword && (
                             <input
                                 type="password"
                                 value={repeatPassword}
                                 onChange={(e) => setRepeatPassword(e.target.value)}
-                                placeholder="Repeat password"
+                                placeholder={t('repeat-password')}
                             />
                         )}
                         {!showRepeatPassword && (
@@ -179,12 +185,12 @@ const LoginForm = ({ onClose }) => {
                                 <div className={styles['checkbox-box']} onClick={() => setRememberMe(!rememberMe)}>
                                     {rememberMe && <div className={styles.checkmark}>✓</div>}
                                 </div>
-                                <span className={styles['checkbox-label']}>Remember me</span>
+                                <span className={styles['checkbox-label']}>{t('remember-me')}</span>
                             </div>
                         )}
                         <div className={styles['error-message']}>{error}</div>
                         <button type="button" onClick={handleSendData} className={`${styles['send-button']}`}>
-                            SEND DATA
+                            {t('send-data')}
                         </button>
                     </form>
                 )}

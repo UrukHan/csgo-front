@@ -16,7 +16,6 @@ export const ContextProvider = ({ children }) => {
                     label: team
                 }));
                 setTeamOptions(teamOptions);
-                console.log("TEAMS: ", teamOptions)
             })
             .catch(err => {
                 console.error(err);

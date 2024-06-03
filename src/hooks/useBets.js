@@ -38,6 +38,7 @@ const useBets = (firstTeam, secondTeam) => {
                 },
             });
             const bbData = response.data.betboom;
+            console.error('bbData: ', bbData);
 
             if (bbData) {
                 const updatedBetData = { ...defaultBetData };
@@ -55,6 +56,7 @@ const useBets = (firstTeam, secondTeam) => {
                         };
                     }
                 });
+                console.error('updatedBetData: ', updatedBetData);
                 setBetBoomData(updatedBetData);
             }
         } catch (error) {

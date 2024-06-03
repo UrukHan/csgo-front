@@ -9,6 +9,14 @@ function HomePage() {
     const { i18n } = useTranslation();
     const { t } = useTranslation();
 
+    React.useEffect(() => {
+        const queryParams = new URLSearchParams(window.location.search);
+        const refId = queryParams.get('ref');
+        if (refId) {
+            localStorage.setItem('referralId', refId);
+        }
+    }, []);
+
     const changeLanguage = (lng) => {
         i18n.changeLanguage(lng);
         localStorage.setItem('language', lng);
@@ -51,18 +59,6 @@ function HomePage() {
                 </div>
 
             </div>
-            <div className={styles['docs']}>
-                <a href="/pdfs/OfertaRu.pdf" download className={styles['doc-link']}>
-                    {t('oferta')}
-                </a>
-                <a href="/pdfs/OfertaRu.pdf" download className={styles['doc-link']}>
-                    {t('termsOfUse')}
-                </a>
-                <a href="/pdfs/OfertaRu.pdf" download className={styles['doc-link']}>
-                    {t('privacyPolicy')}
-                </a>
-            </div>
-
             <div className={styles['info']}>
                 {t('contacts')}
             </div>

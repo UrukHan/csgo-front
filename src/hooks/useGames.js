@@ -4,32 +4,30 @@ import moment from 'moment-timezone';
 import config from "../utils/config.json";
 
 const useGames = () => {
-    const [games, setGames] = useState([]);
+    const [upcomingGames, setUpcomingGames] = useState([]);
+    const [liveGames, setLiveGames] = useState([]);
 
     useEffect(() => {
         const fetchGames = async () => {
             try {
                 const response = await axios.get(`${config.apiUrl}/upcoming`);
-                console.log("response: ", response)
                 const localTimeZone = moment.tz.guess();
-                const localOffset = moment.tz(localTimeZone).utcOffset();
-                const currentDateTime = moment().utcOffset(localOffset);
+                const currentDateTime = moment().tz(localTimeZone);
 
-                const localGames = response.data.map(game => {
-                    const gameDateTime = moment.tz(`${game.date} ${game.time}`, 'YYYY-MM-DD HH:mm', localTimeZone);
-                    const localGameDateTime = gameDateTime.utcOffset(localOffset);
-                    const localDate = localGameDateTime.format('YYYY-MM-DD');
-                    const localTime = localGameDateTime.format('HH:mm');
+                const processedGames = response.data.map(game => {
+                    const gameDateTimeUTC = moment.utc(`${game.date} ${game.time}`, 'YYYY-MM-DD HH:mm');
+                    const localGameDateTime = gameDateTimeUTC.clone().tz(localTimeZone);
                     return {
                         ...game,
-                        date: localDate,
-                        time: localTime
+                        date: localGameDateTime.format('YYYY-MM-DD'),
+                        time: localGameDateTime.format('HH:mm'),
+                        isLive: localGameDateTime.isBefore(currentDateTime)
                     };
-                }).filter(game => moment.tz(`${game.date} ${game.time}`, 'YYYY-MM-DD HH:mm', localTimeZone).isSameOrAfter(currentDateTime));
+                });
 
+                setUpcomingGames(processedGames.filter(game => !game.isLive));
+                setLiveGames(processedGames.filter(game => game.isLive));
 
-                console.log(localGames)
-                setGames(localGames);
             } catch (error) {
                 console.error('Error fetching games:', error);
             }
@@ -38,7 +36,7 @@ const useGames = () => {
         fetchGames();
     }, []);
 
-    return games;
+    return { upcomingGames, liveGames };
 };
 
 export default useGames;

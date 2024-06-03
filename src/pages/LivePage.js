@@ -1,27 +1,38 @@
-import React, {useState, useEffect, useContext} from 'react';
+import React, { useState, useEffect, useContext } from 'react';
+import { AccessContext } from "../AccessContext";
+import { GeneralContext } from '../GeneralContext';
 
 import styles from './LivePage.module.css';
-import { GeneralContext } from '../GeneralContext';
 
 import TeamSelectionContainer from '../components/TeamSelectionContainer';
 import LiveBlock from '../components/LiveBlock';
+import GamesLiveContainer from '../components/GamesLiveContainer';
 import BettingContainer from '../components/BettingContainer';
-import GamesContainer from '../components/GamesContainer';
+import SubscriptionModal from "../components/SubscriptionModal";
+import CryptoModalPay from "../components/CryptoModalPay";
 
 import useGames from '../hooks/useGames';
-import useMapOptions from '../hooks/useMapOptions';
+import useMaps from '../hooks/useMaps';
 import useNumOptions from '../hooks/useNumOptions';
 import useTeamImages from '../hooks/useTeamImages';
 import usePrediction from '../hooks/usePrediction';
 import useMyBets from '../hooks/useMyBets';
+import {useTranslation} from "react-i18next";
+import useBets from "../hooks/useBets";
+import useMarks from "../hooks/useMarks";
 
 
-function LivePage() {
+function LivePage({ stripePromise }) {
 
-    const games = useGames();
-    const teamOptions = useContext(GeneralContext);
-    const optionsMap = useMapOptions();
+    const { t } = useTranslation();
+    const { isLoggedIn, haveAccess, setShowLoginModal, setShowSubscribeModal, showSubscribeModal, checkAccess } = useContext(AccessContext);
+    const [showCryptoModal, setShowCryptoModal] = useState(false);
+
+    const { liveGames } = useGames();
+    const maps = useMaps();
     const optionsNum = useNumOptions();
+
+    const { teamOptions } = useContext(GeneralContext);
 
     const [firstTeam, setFirstTeam] = useState('');
     const [secondTeam, setSecondTeam] = useState('');
@@ -36,13 +47,24 @@ function LivePage() {
 
     const firstTeamImage = useTeamImages(firstTeam);
     const secondTeamImage = useTeamImages(secondTeam);
-    const [prediction, loading, updatePrediction, resetPrediction] = usePrediction(firstTeam, secondTeam, mapName, firstNum, secondNum);
+    const [prediction, loading, updatePredictions, resetPrediction] = usePrediction(firstTeam, secondTeam, mapName, firstNum, secondNum);
 
+    const [betBoomData, updateBetBoom, resetBetBoomData, defaultBetData] = useBets(firstTeam, secondTeam);
+    const [dataMark, updateMarks, resetMarkData, defaultMark] = useMarks(prediction, betBoomData);
     const myBets = useMyBets();
 
     const handleGetButtonClick = async () => {
-        if (!loading) {
-            await updatePrediction();
+        if (!isLoggedIn) {
+            setShowLoginModal(true);
+        } else if (haveAccess) {
+            if (!loading) {
+                await updatePredictions();
+            }
+        } else {
+            await checkAccess();
+            if (!haveAccess) {
+                setShowSubscribeModal(true);
+            }
         }
     };
 
@@ -89,11 +111,11 @@ function LivePage() {
     };
 
     useEffect(() => {
-        if (optionsMap.length > 0) {
-            setFirstMapOption(optionsMap[0]);
-            setMap(optionsMap[0]?.value);
+        if (maps.length > 0) {
+            setFirstMapOption(maps[0]);
+            setMap(maps[0]?.value);
         }
-    }, [optionsMap]);
+    }, [maps]);
 
     useEffect(() => {
         if (optionsNum.length > 0) {
@@ -103,6 +125,29 @@ function LivePage() {
             setSecondNum(optionsNum[0]?.value);
         }
     }, [optionsNum]);
+
+    useEffect(() => {
+        if (firstTeam && secondTeam) {
+            updateBetBoom()
+                .then(result => {
+                    console.log(result);
+                })
+                .catch(error => {
+                    console.error(error);
+                });
+        }
+        resetMarkData();
+    }, [firstTeam, secondTeam, updateBetBoom, resetMarkData]);
+
+    useEffect(() => {
+        updateMarks()
+            .then(result => {
+                console.log("MARKS", result);
+            })
+            .catch(error => {
+                console.error(error);
+            });
+    }, [prediction, updateMarks]);
 
     useEffect(() => {
         if (teamOptions && teamOptions.length > 0) {
@@ -128,7 +173,8 @@ function LivePage() {
             />
             <div className={styles['map-blocks-container']}>
                 <LiveBlock
-                    optionsMap={optionsMap}
+                    info={t('live-info')}
+                    optionsMap={maps}
                     optionsNum={optionsNum}
                     handleFirstMapChange={handleFirstMapChange}
                     handleFirstNumChange={handleFirstNumChange}
@@ -148,20 +194,23 @@ function LivePage() {
                     team2_count_games={prediction?.games_count_2}
                 />
             </div>
-            <div className={styles['filler-container']} disabled={loading}>
-                {/*<BettingContainer*/}
-                {/*    firstTeam={firstTeam}*/}
-                {/*    secondTeam={secondTeam}*/}
-                {/*    betBoomData={betBoomData}*/}
-                {/*    resetBetBoomData={resetBetBoomData}*/}
-                {/*    defaultBetData={defaultBetData}*/}
-                {/*    dataMark={dataMark}*/}
-                {/*    defaultMark={defaultMark}*/}
-                {/*/>*/}
-                {!loading && (
-                    <GamesContainer games={games} handleGameClick={handleGameClick} />
-                )}
+            <div className={styles['filler-container']} >
+                <BettingContainer
+                    betBoomData={betBoomData}
+                    resetBetBoomData={resetBetBoomData}
+                    defaultBetData={defaultBetData}
+                    dataMark={dataMark}
+                    defaultMark={defaultMark}
+                />
+                <GamesLiveContainer games={liveGames} handleGameClick={handleGameClick} />
             </div>
+            {loading && (
+                <div className={styles['container-overlay']}>
+                    <div>Loading ...</div>
+                </div>
+            )}
+            {showSubscribeModal && <SubscriptionModal onClose={() => setShowSubscribeModal(false)} stripePromise={stripePromise} />}
+            {showCryptoModal && <CryptoModalPay onClose={() => setShowCryptoModal(false)} />}
         </div>
     );
 }

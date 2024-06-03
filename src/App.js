@@ -10,11 +10,16 @@ import HeaderAdmin from './componentsAdmin/HeaderAdmin';
 import HomePage from './pages/HomePage';
 import LinePage from './pages/LinePage';
 import LivePage from './pages/LivePage';
+import ReferralPage from './pages/ReferralPage';
 import SettingsPage from './pages/SettingsPage';
 import AdminPage from "./pages/AdminPage";
 import AdminUsersPage from "./pages/AdminUsersPage";
 import AdminPaymentsPage from "./pages/AdminPaymentsPage";
 import AdminSubscribersPage from "./pages/AdminSubscribersPage";
+import OfertaPage from "./pages/OfertaPage";
+import UseAgreementPage from "./pages/UseAgreementPage";
+import PrivacyPolicyPage from "./pages/PrivacyPolicyPage";
+import TermsOfUsePage from "./pages/TermsOfUsePage";
 
 function App( { stripePromise } ) {
     const location = useLocation();
@@ -31,8 +36,13 @@ function App( { stripePromise } ) {
                             <Routes>
                                 <Route path="/" element={<HomePage />} index />
                                 <Route path="/line" element={<LinePage stripePromise={stripePromise} />} />
-                                <Route path="/live" element={<LivePage />} />
+                                <Route path="/live" element={<LivePage stripePromise={stripePromise} />} />
                                 <Route path="/settings" element={<SettingsPage stripePromise={stripePromise} />} />
+                                <Route path="/oferta" element={<OfertaPage />} />
+                                <Route path="/use-agreement" element={<UseAgreementPage />} />
+                                <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
+                                <Route path="/terms-of-use" element={<TermsOfUsePage />} />
+                                <Route path="/referral" element={<ReferralPage />} />
                                 <Route path="/admin/*" element={
                                     <Routes>
                                         <Route path="/" element={<AdminPage />} />

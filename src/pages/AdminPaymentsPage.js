@@ -4,7 +4,7 @@ import axios from 'axios';
 import config from "../utils/config.json";
 import styles from "./AdminPaymantsPage.module.css";
 
-function AdminPage() {
+function AdminPaymentsPage() {
     const [isAdminModalOpen, setIsAdminModalOpen] = useState(!localStorage.getItem('adminToken'));
     const [paymentId, setPaymentId] = useState(null);
     const [paymentsData, setPaymentsData] = useState([]);
@@ -21,7 +21,7 @@ function AdminPage() {
         if (!isAdminModalOpen) {
             const token = localStorage.getItem('adminToken');
             axios.post(
-                `${config.paymentUrl}/api/v1/get-data`,
+                `${config.paymentUrl}/api/v1/get-payments`,
                 { start_date: startDate, end_date: endDate },
                 { headers: { Authorization: `Bearer ${token}` } }
             )
@@ -108,7 +108,7 @@ function AdminPage() {
                         </div>
                     </div>
                     <div className={styles['table-admin-container']}>
-                        <AdminTable data={paymentsData} onSelect={setPaymentId} />
+                        <AdminPaymentsTable data={paymentsData} onSelect={setPaymentId} />
                     </div>
                     <div className={styles['buttons-container']}>
                         <button
@@ -133,9 +133,9 @@ function AdminPage() {
 
 }
 
-export default AdminPage;
+export default AdminPaymentsPage;
 
-function AdminTable({ data, onSelect }) {
+function AdminPaymentsTable({ data, onSelect }) {
     const [activeRow, setActiveRow] = useState(null);
 
     const handleClick = (paymentId) => {
@@ -159,11 +159,21 @@ function AdminTable({ data, onSelect }) {
                     }`}
                 >
                     <div className={styles['row-item-full']}>
-                        {item.paymentId}
+                        {item.email}{' '}
+                        {item.paymentId}{' '}
                     </div>
                     <div className={styles['row-item']}>
+                        <div className={styles['row-item-amount']}>
+                            {item.amount}
+                        </div>
+                        <div className={styles['row-item-type-transction']}>
+                            {item.transactionType}
+                        </div>
+                        <div className={styles['row-item-type-pay']}>
+                            {item.payType}
+                        </div>
                         <div className={styles['row-item-email']}>
-                            {item.email}
+                            {item.referralId}
                         </div>
                         <div className={styles['row-item-status']}>
                             {item.status}

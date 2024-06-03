@@ -1,27 +1,52 @@
 
 .team-selection-container {
+    height: 12%;
+    width: 100%;
+    padding-block: 1%;
     background-color: var(--primary-color);
     border-bottom: 1px solid var(--border-color);
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 100%;
     box-sizing: border-box;
-    height: 12%;
-    padding-block: 1%;
 }
 
 .bank-team-container {
     height: 80%;
-    color: var(--dark-test-color);
-    font-size: 70%;
+    width: 20%;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    flex-basis: 20%;
+    align-items: flex-start;
     background-color: var(--heder-color);
     border: 1px solid var(--border-color);
+}
+
+.bank-button {
+    color: var(--dark-test-color);
+    font-size: 70%;
+    height: 100%;
+    width: 100%;
+    min-width: 0;
+    text-align: center;
+    overflow-wrap: break-word;
+    word-break: break-all;
+    hyphens: auto;
+    background-color: inherit;
+    border: none;
+    display: block;
+}
+
+
+.profit-info {
+    font-size: 120%;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "New_Cicle";
+    color: var(--light-test-color);
+    word-break: normal;
 }
 
 .bank-team-container:active,
@@ -109,9 +134,9 @@
     display: flex;
     justify-content: center;
     flex-grow: 1;
-    margin-left: 0%;
+    margin-bottom: 1%;
     width: 30%;
-    height: 100%;
+    height: 95%;
     font-size: 80%;
 }
 
@@ -119,9 +144,9 @@
     display: flex;
     justify-content: flex-end;
     flex-grow: 1;
-    margin-left: 0%;
+    margin-bottom: 1%;
     width: 30%;
-    height: 100%;
+    height: 95%;
     font-size: 80%;
 }
 
@@ -152,6 +177,21 @@
     box-sizing: border-box;
     border: 1px solid var(--border-color);
     border-radius: 1vh;
+}
+
+.info {
+    float: right;
+    width: 10%;
+    margin-right: 5%;
+    cursor: pointer;
+}
+
+.tooltip {
+    position: absolute;
+    background-color: var(--secondary-color);
+    color: var(--white-color);
+    padding: 5px 10px;
+    border-radius: 4px;
 }
 
 @media (max-aspect-ratio: 1/1) {
@@ -187,5 +227,9 @@
         width: 76%;
         height: 10%;
         z-index: 100;
+    }
+
+    .profit-info {
+        font-size: 100%;
     }
 }

@@ -3,7 +3,7 @@ import styles from './LiveBlock.module.css';
 import MapSelector from "./MapSelector";
 import NumSelector from "./NumSelector";
 
-const LiveBlock = ({optionsMap, optionsNum, handleFirstMapChange, firstMapOption, firstNumOption, secondNumOption,
+const LiveBlock = ({info, optionsMap, optionsNum, handleFirstMapChange, firstMapOption, firstNumOption, secondNumOption,
                        handleFirstNumChange, handleSecondNumChange,
                        team1_win_prediction = "-",
                        team2_win_prediction = "-",
@@ -73,6 +73,9 @@ const LiveBlock = ({optionsMap, optionsNum, handleFirstMapChange, firstMapOption
                     <p className={`${styles.countNumbers}`}>{`${team2_count_games} games`}</p>
                 </div>
             </div>
+        </div>
+        <div className={styles['live-info-container']}>
+            <div className={styles['live-info']}> {info} </div>
         </div>
     </div>
 );

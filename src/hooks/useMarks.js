@@ -49,12 +49,6 @@ const useMarks = (predictions, betBoomData) => {
                     minValues.draw = Math.max(minValues.draw, prediction.draw);
                     minValues.winBase1 = Math.max(minValues.winBase1, prediction.win_1);
                     minValues.winBase2 = Math.max(minValues.winBase2, prediction.win_2);
-                } else {
-                    minValues.win1 = 0;
-                    minValues.win2 = 0;
-                    minValues.draw = 0;
-                    minValues.winBase1 = 0;
-                    minValues.winBase2 = 0;
                 }
 
             }
@@ -65,21 +59,21 @@ const useMarks = (predictions, betBoomData) => {
                 '3': { ...dataMark['3'] },
             };
 
-            console.log('minValues ', minValues)
+            //console.log('minValues ', minValues)
 
 
             for (let i = 1; i <= 3; i++) {
                 const betBoom = betBoomData[i];
-                console.log('betBoom ', betBoom)
+                //console.log('betBoom ', betBoom)
                 for (let key in minValues) {
 
-                    if (betBoom[key] !== '-' && minValues[key] <= betBoom[key] && minValues[key] !== 0) {
+                    if (betBoom[key] !== '-' && minValues[key] <= betBoom[key] && betBoom[key] <= 3 && minValues[key] !== 0) {
                         newDataMark[i][key] = 1;
                     }
                 }
             }
             setDataMark(newDataMark);
-            console.log('newDataMark ', newDataMark)
+            //console.log('newDataMark ', newDataMark)
         }
         catch (error) {
             console.error('Error fetching mark:', error);

@@ -1,6 +1,7 @@
 .container-reference {
     display: flex;
     justify-content: space-between;
+    flex-direction: column;
     align-items: center;
     width: 100%;
     height: 100%;
@@ -8,28 +9,46 @@
 }
 
 
-.image-container {
-    height: 90%;
-    width: 50%;
+.submit-button {
+    background-color: var(--dark-test-color);
+    font-size: 100%;
+    width: 70%;
+    height: 40%;
+    color: white;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    border: 1px solid var(--light-test-color);
+    transition-duration: 0.4s;
+    margin-top: 5%;
+    margin-bottom: 5%;
 }
 
-.image {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-    border: 1px solid var(--mid-test-color);
+.submit-button:hover {
+    background-color: var(--mid-test-color);
 }
 
-.text-container {
-    width: 50%;
-    height: 90%;
-    padding-left: 20px;
-    font-size: 90%;
-    color: var(--mid-test-color);
-    overflow: auto;
+.submit-button:active{
+    background-color: var(--mid-test-color);
+}
+
+.text {
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    height: 10%;
+    margin-top: 5%;
 }
 
 @media (max-aspect-ratio: 1/1) {
 
+    .text {
+        font-size: 80%;
+    }
+
+    .submit-button {
+        height: 20%;
+    }
 
 }

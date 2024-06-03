@@ -4,8 +4,12 @@ import BetContainer from './BetContainer';
 import BBLogo from '../images/BBlogo.png';
 import LigaLogo from '../images/Liga.png';
 import xBET from '../images/1xBET.png';
+import {useTranslation} from "react-i18next";
 
-const BettingContainer = ({ firstTeam, secondTeam, betBoomData, resetBetBoomData, defaultBetData, dataMark, defaultMark }) => {
+const BettingContainer = ({ betBoomData, resetBetBoomData, defaultBetData, dataMark, defaultMark }) => {
+
+    const { t } = useTranslation();
+
     useEffect(() => {
         if (betBoomData === null) {
             resetBetBoomData();
@@ -14,10 +18,8 @@ const BettingContainer = ({ firstTeam, secondTeam, betBoomData, resetBetBoomData
 
     return (
         <div className={styles['bettings-container']}>
-            <div className={styles['bet-teams-container']}>
-                <div className={styles['bet-auto']}>{'AUTO'}</div>
-                <div className={styles['bet-team']}>{firstTeam === '' ? '-' : firstTeam}</div>
-                <div className={styles['bet-team']}>{secondTeam === '' ? '-' : secondTeam}</div>
+            <div className={styles['bet-info-container']}>
+                <div className={styles['bet-info']}>{t('betting-info')}</div>
             </div>
             <div className={styles['bet-maps-container']}>
                 <div className={styles['bet-maps']}></div>

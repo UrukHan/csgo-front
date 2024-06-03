@@ -1,0 +1,8 @@
+.page {
+    height: 92%;
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}

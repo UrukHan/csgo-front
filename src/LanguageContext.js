@@ -33,7 +33,6 @@ export const LanguageProvider = ({ children }) => {
                         RU: 'ru', // Russia
                         BY: 'ru', // Belarus
                         KZ: 'ru', // Kazakhstan
-                        UA: 'ru', // Ukraine
                         KG: 'ru', // Kyrgyzstan
                         MD: 'ru', // Moldova
                         TJ: 'ru', // Tajikistan

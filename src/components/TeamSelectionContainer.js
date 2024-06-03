@@ -1,9 +1,8 @@
-import React, {useState} from 'react';
+import React, { useState, useEffect } from 'react';
 import styles from './TeamSelectionContainer.module.css';
 import TeamSelector from './TeamSelector';
 import MyBetsContainer from '../components/MyBetsContainer';
 import {useTranslation} from "react-i18next";
-
 
 const TeamSelectionContainer = ({
                                     options,
@@ -19,6 +18,15 @@ const TeamSelectionContainer = ({
 
     const { t } = useTranslation();
     const [showGamesModal, setShowGamesModal] = useState(false);
+    const [showProfit, setShowProfit] = useState(true);
+
+    useEffect(() => {
+        const interval = setInterval(() => {
+            setShowProfit(prevShowProfit => !prevShowProfit);
+        }, 5000);
+
+        return () => clearInterval(interval);
+    }, []);
 
     const handleGamesClick = () => {
         setShowGamesModal(true);
@@ -33,10 +41,20 @@ const TeamSelectionContainer = ({
 
     return (
         <div className={styles['team-selection-container']}>
-            <button className={styles['bank-team-container']} onClick={handleGamesClick}>
-                <div className={styles['profit-text']}>{t('profit')}</div>
-                <div className={styles['profit-amount']}>{games.bank}</div>
-            </button>
+            <div className={styles['bank-team-container']}>
+                <button className={styles['bank-button']} onClick={handleGamesClick}>
+                    {showProfit ? (
+                        <>
+                            <div className={styles['profit-text']}>
+                                {t('profit')}
+                            </div>
+                            <div className={styles['profit-amount']}>{games.bank}</div>
+                        </>
+                    ) : (
+                        <div className={styles['profit-info']}>{t('profit-info')}</div>
+                    )}
+                </button>
+            </div>
             {showGamesModal && (
                 <div
                     className={styles['my-bets-modal']}

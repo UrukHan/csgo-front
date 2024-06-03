@@ -5,24 +5,60 @@
     background-color: var(--primary-color);
 }
 
-.games-list {
-    font-family: 'New_Cicle';
-    font-size: 140%;
-    overflow-y: auto;
-    height: 95%;
-    padding: 2%;
-    line-height: 100%;
+.games-info-container {
+    display: flex;
+    flex-direction: row;
+    height: 15%;
+    width: 100%;
+    background-color: var(--primary-color);
+    justify-content: center;
+    align-items: center;
+    border-bottom: 1px solid var(--border-color);
     border-left: 1px solid var(--border-color);
 }
 
-.game-date {
+.games-info {
+    display: flex;
+    font-size: 70%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 80%;
+    width: 100%;
+    box-sizing: border-box;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    padding-left: 5%;
+    padding-right: 5%;
+    text-align: center;
+    color: var(--dark-test-color);
+}
+
+.games-list {
+    font-family: 'New_Cicle';
+    overflow-y: auto;
+    height: 80%;
+    padding: 2%;
+    border-left: 1px solid var(--border-color);
+}
+
+.game-upcoming {
     display: block;
     color: var(--dark-test-color);
     font-family: 'New_Cicle';
     font-weight: bold;
-    font-size: 80%;
+    font-size: 100%;
     line-height: 100%;
     margin-bottom: -5%;
+}
+
+.game-live {
+    display: block;
+    color: var(--dark-test-color);
+    font-family: 'New_Cicle';
+    font-weight: bold;
+    font-size: 60%;
+    line-height: 40%;
 }
 
 .games-list div:hover {
@@ -39,7 +75,7 @@
 
     .games-container {
         background-color: var(--primary-color);
-        height: 40%;
+        height: 50%;
         width: 100%;
     }
 
@@ -55,10 +91,39 @@
         font-family: 'New_Cicle';
         font-size: 120%;
         overflow-y: auto;
-        height: 90%;
+        height: 75%;
         line-height: 100%;
         white-space: nowrap;
         border-top: 1px solid var(--border-color);
+        border-left: 0px solid var(--border-color);
+    }
+
+    .games-info {
+        display: flex;
+        font-size: 70%;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 80%;
+        width: 100%;
+        box-sizing: border-box;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+        padding-left: 5%;
+        padding-right: 5%;
+        text-align: center;
+        color: var(--dark-test-color);
+    }
+
+    .games-info-container {
+        display: flex;
+        flex-direction: row;
+        height: 20%;
+        width: 100%;
+        background-color: var(--primary-color);
+        justify-content: center;
+        align-items: center;
+        border-bottom: 1px solid var(--border-color);
         border-left: 0px solid var(--border-color);
     }
 }

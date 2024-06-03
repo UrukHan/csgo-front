@@ -47,13 +47,12 @@ export const AccessProvider = ({ children }) => {
     const transactionsUpdated = async () => {
         let access = false;
         try {
-            console.log("START")
             const response = await axios.get(`${config.paymentUrl}/api/v1/user-transactions-updated`, {
                 headers: {
                     'Authorization': `Bearer ${localStorage.getItem('authToken')}`
                 }
             });
-            console.log(response)
+
             if (response.status === 200) {
                 await checkAccess();
             }
@@ -112,7 +111,6 @@ export const AccessProvider = ({ children }) => {
                 }
             });
             if (response.status === 200) {
-                console.log("response.data", response.data)
                 setIsSubscribed(response.data.subscribe);
                 setHaveAccess(response.data.success);
                 setSubscribeTo(response.data.access_to);

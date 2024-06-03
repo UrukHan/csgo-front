@@ -10,6 +10,8 @@ import MapBlock from '../components/MapBlock';
 import Reference from '../components/Reference';
 import BettingContainer from '../components/BettingContainer';
 import GamesContainer from '../components/GamesContainer';
+import SubscriptionModal from "../components/SubscriptionModal";
+import CryptoModalPay from "../components/CryptoModalPay";
 
 import useGames from '../hooks/useGames';
 import useMarks from '../hooks/useMarks';
@@ -17,16 +19,16 @@ import useBets from '../hooks/useBets';
 import useTeamImages from '../hooks/useTeamImages';
 import usePredictions from '../hooks/usePredictions';
 import useMyBets from '../hooks/useMyBets';
-import SubscriptionModal from "../components/SubscriptionModal";
-import CryptoModal from "../components/CryptoModal";
+import {useTranslation} from "react-i18next";
 
 
 function LinePage({ stripePromise }) {
 
+    const { t } = useTranslation();
     const { isLoggedIn, haveAccess, setShowLoginModal, setShowSubscribeModal, showSubscribeModal, checkAccess } = useContext(AccessContext);
     const [showCryptoModal, setShowCryptoModal] = useState(false);
 
-    const games = useGames();
+    const { upcomingGames } = useGames();
     const { teamOptions } = useContext(GeneralContext);
 
     const [firstTeam, setFirstTeam] = useState('');
@@ -58,6 +60,7 @@ function LinePage({ stripePromise }) {
     };
 
     const handleGameClick = (game) => {
+
         const firstTeamOption = teamOptions.find((option) => option.value === game.team1);
         const secondTeamOption = teamOptions.find((option) => option.value === game.team2);
         if (firstTeamOption && secondTeamOption) {
@@ -85,16 +88,6 @@ function LinePage({ stripePromise }) {
     };
 
     useEffect(() => {
-        console.log("TEAMS LINE: ", teamOptions)
-        if (teamOptions && teamOptions.length > 0) {
-            setFirstTeamOption(teamOptions[0]);
-            setSecondTeamOption(teamOptions[1]);
-            setFirstTeam(teamOptions[0]?.value);
-            setSecondTeam(teamOptions[1]?.value);
-        }
-    }, [teamOptions]);
-
-    useEffect(() => {
         if (firstTeam && secondTeam) {
             updateBetBoom()
                 .then(result => {
@@ -117,6 +110,14 @@ function LinePage({ stripePromise }) {
             });
     }, [predictions, updateMarks]);
 
+    useEffect(() => {
+        if (teamOptions && teamOptions.length > 0) {
+            setFirstTeamOption(teamOptions[0]);
+            setSecondTeamOption(teamOptions[1]);
+            setFirstTeam(teamOptions[0]?.value);
+            setSecondTeam(teamOptions[1]?.value);
+        }
+    }, [teamOptions]);
 
     return (
         <div className={styles['page']}>
@@ -131,6 +132,12 @@ function LinePage({ stripePromise }) {
                 secondTeamOption={secondTeamOption}
                 games={myBets}
             />
+            <div className={styles['map-info-container']}>
+                <div className={styles['info-text-0']}>{t('map-name-info')}</div>
+                <div className={styles['info-text-1']}>{t('probability-first-info')}</div>
+                <div className={styles['info-text-2']}>{t('odds-info')}</div>
+                <div className={styles['info-text-3']}>{t('probability-second-info')}</div>
+            </div>
             <div className={styles['map-blocks-container']}>
                 {haveAccess ? config.maps.map((mapName, index) => (
                     <MapBlock
@@ -147,19 +154,19 @@ function LinePage({ stripePromise }) {
                         team2_count_games={predictions[mapName]?.games_count_2}
                         isDark={index % 2 === 0}
                     />
-                )) : <Reference /> }
+                )) : <Reference
+                    stripePromise={stripePromise}
+                /> }
             </div>
             <div className={styles['filler-container']} >
                 <BettingContainer
-                    firstTeam={firstTeam}
-                    secondTeam={secondTeam}
                     betBoomData={betBoomData}
                     resetBetBoomData={resetBetBoomData}
                     defaultBetData={defaultBetData}
                     dataMark={dataMark}
                     defaultMark={defaultMark}
                 />
-                <GamesContainer games={games} handleGameClick={handleGameClick} />
+                <GamesContainer games={upcomingGames} handleGameClick={handleGameClick} />
             </div>
             {loading && (
                 <div className={styles['container-overlay']}>
@@ -167,7 +174,7 @@ function LinePage({ stripePromise }) {
                 </div>
             )}
             {showSubscribeModal && <SubscriptionModal onClose={() => setShowSubscribeModal(false)} stripePromise={stripePromise} />}
-            {showCryptoModal && <CryptoModal onClose={() => setShowCryptoModal(false)} />}
+            {showCryptoModal && <CryptoModalPay onClose={() => setShowCryptoModal(false)} />}
         </div>
     );
 }

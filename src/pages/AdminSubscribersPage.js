@@ -1,50 +1,64 @@
 import React, { useState, useEffect } from 'react';
 import AdminForm from '../componentsAdmin/AdminForm';
+import styles from "./AdminSubscribersPage.module.css";
 import axios from 'axios';
 import config from "../utils/config.json";
-import styles from "./AdminPage.module.css";
 
-function AdminPage() {
+function AdminSubscribersPage() {
     const [isAdminModalOpen, setIsAdminModalOpen] = useState(!localStorage.getItem('adminToken'));
-    const [paymentId, setPaymentId] = useState(null);
-    const [paymentsData, setPaymentsData] = useState([]);
-    const [startDate, setStartDate] = useState(getWeekAgoDate());
-    const [endDate, setEndDate] = useState(getTodayDate());
+    const [subscribersData, setSubscribersData] = useState([]);
+    const [selectedEmail, setSelectedEmail] = useState(null);
+    const [currentPage, setCurrentPage] = useState(1);
+    const [totalPages, setTotalPages] = useState(0);
+    const [totalSubscribers, setTotalSubscribers] = useState(0);
+    const [statusMessage, setStatusMessage] = useState('');
+
     const [cancelButtonDisabled, setCancelButtonDisabled] = useState(true);
+
+    const handlePageChange = newPage => {
+        setCurrentPage(newPage);
+    };
+
+    useEffect(() => {
+        fetchSubscribersData();
+    }, [currentPage, isAdminModalOpen]);
 
     const handleAdminConfirmation = (token) => {
         localStorage.setItem('adminToken', token);
         setIsAdminModalOpen(false);
     };
 
-    const handleAdminLogout = () => {
-        localStorage.removeItem('adminToken');
-        setIsAdminModalOpen(true);
-    };
-
-    useEffect(() => {
-        if (!isAdminModalOpen) {
-            const token = localStorage.getItem('adminToken');
-            axios.post(
-                `${config.paymentUrl}/api/v1/get_data`,
-                { start_date: startDate, end_date: endDate },
-                { headers: { Authorization: `Bearer ${token}` } }
-            )
-                .then(res => setPaymentsData(res.data))
-                .catch(err => console.error('Ошибка при загрузке данных', err));
+    const fetchSubscribersData = async () => {
+        const token = localStorage.getItem('adminToken');
+        try {
+            const response = await axios.post(`${config.paymentUrl}/api/v1/get-subscribers`, {
+                page: currentPage
+            }, {
+                headers: { 'Authorization': `Bearer ${token}` }
+            });
+            console.log('Users Data:', response);
+            setSubscribersData(response.data.users);
+            setTotalPages(response.data.totalPages);
+            setTotalSubscribers(response.data.totalUsers);
+            setStatusMessage('Data fetched successfully.');
+        } catch (error) {
+            console.error('Error fetching users data', error);
+            setStatusMessage('Failed to fetch data.');
         }
-    }, [isAdminModalOpen, startDate, endDate]);
+    };
 
     const handleCancel = () => {
         const token = localStorage.getItem('adminToken');
-        if (paymentId) {
+        if (selectedEmail) {
             axios.post(
-                `${config.paymentUrl}/api/v1/payment_cancel`,
-                { PaymentId: paymentId },
+                `${config.paymentUrl}/api/v1/subscribe-cancel`,
+                { email: selectedEmail },
                 { headers: { Authorization: `Bearer ${token}` } }
             )
-                .then(() => setPaymentId(null))
-                .catch(err => console.error('Ошибка при отмене платежа', err));
+                .then(() => {
+                    setSelectedEmail(null);
+                })
+                .catch(err => console.error('Ошибка при отмене подписки', err));
         }
     };
 
@@ -53,116 +67,83 @@ function AdminPage() {
     }, []);
 
     useEffect(() => {
-        setCancelButtonDisabled(paymentId === null);
-    }, [paymentId]);
+        setCancelButtonDisabled(selectedEmail === null);
+    }, [selectedEmail]);
 
     return (
         <div className={styles['page']}>
-            <div className={styles['payments-container']}>
+            <div className={styles['user-container']}>
                 {isAdminModalOpen ? (
                     <AdminForm onConfirm={handleAdminConfirmation} />
                 ) : (
-                    <div>
-                        <div className={styles['title-container']}>
-                            <h1>USER PAYMENTS</h1>
-                        </div>
-                        <div className={styles['date-inputs-container']}>
-                            <div className={styles['date-input-container']}>
-                                <label>
-                                    Start Date:
-                                    <input
-                                        type="date"
-                                        value={startDate}
-                                        onChange={e => setStartDate(e.target.value)}
-                                        className={styles['date-input']}
-                                    />
-                                </label>
-                            </div>
-                            <div className={styles['date-input-container']}>
-                                <label>
-                                    End Date:
-                                    <input
-                                        type="date"
-                                        value={endDate}
-                                        onChange={e => setEndDate(e.target.value)}
-                                        className={styles['date-input']}
-                                    />
-                                </label>
-                            </div>
-                        </div>
-                        <div className={styles['table-container']}>
-                            <AdminTable data={paymentsData} onSelect={setPaymentId} />
-                        </div>
-                        <div className={styles['buttons-container']}>
-                            <button
-                                className={`${styles['admin-button']} ${cancelButtonDisabled ? styles['admin-button-disabled'] : ''}`}
-                                onClick={handleCancel}
-                                disabled={cancelButtonDisabled}
-                            >
-                                Cancel payment</button>
-                        </div>
+                    <div className={styles['buttons-container']}>
+                        <button
+                            className={`${styles['admin-button']} ${selectedEmail ? '' : styles['admin-button-disabled']}`}
+                            onClick={handleCancel}
+                            disabled={!selectedEmail}
+                        >
+                            Cancel payment</button>
                     </div>
                 )}
             </div>
-            <button className={styles['admin-logout-button']} onClick={handleAdminLogout}>Admin Logout</button>
+            <div className={styles['pagination-container']}>
+                <button className={styles['users-button']} onClick={() => handlePageChange(currentPage - 1)} disabled={currentPage === 1}>Prev</button>
+                <input className={styles['users-input']} type="number" value={currentPage} onChange={e => setCurrentPage(Number(e.target.value))} />
+                <button className={styles['users-button']} onClick={() => handlePageChange(currentPage + 1)} disabled={currentPage === totalPages}>Next</button>
+                <button className={styles['users-button']} onClick={() => fetchSubscribersData()}>Перейти</button>
+                <span> Pages: {totalPages}</span>
+                <span> Users: {totalSubscribers}</span>
+            </div>
+            <div className={styles['list-container']}>
+                <AdminSubscribersTable data={subscribersData} onEmailSelect={setSelectedEmail} />
+                <div className={styles['status-message']}>
+                    <p>Status: {statusMessage}</p>
+                </div>
+            </div>
         </div>
     );
 
 }
 
-export default AdminPage;
+export default AdminSubscribersPage;
 
-function AdminTable({ data, onSelect }) {
+function AdminSubscribersTable({ data, onEmailSelect }) {
     const [activeRow, setActiveRow] = useState(null);
 
-    const handleClick = (paymentId) => {
-        if (paymentId === activeRow) {
+    const handleClick = (email) => {
+        if (email === activeRow) {
             setActiveRow(null);
-            onSelect(null);
+            onEmailSelect(null);
         } else {
-            setActiveRow(paymentId);
-            onSelect(paymentId);
+            setActiveRow(email);
+            onEmailSelect(email);
         }
     };
 
+    if (!data || data.length === 0) {
+        return <div>No users data available.</div>;
+    }
+
     return (
-        <table className={styles['admin-table']}>
-            <thead>
-            <tr>
-                <th>PaymentId</th>
-                <th>Status</th>
-                <th>Email</th>
-                <th>Date</th>
-            </tr>
-            </thead>
-            <tbody>
-            {data.map((item) => (
-                <tr
-                    key={item.paymentId}
-                    onClick={() => handleClick(item.paymentId)}
+        <div className={styles['table-container']}>
+            {data.map((item, index) => (
+                <div
+                    key={index}
+                    onClick={() => handleClick(item.email)}
                     className={`${styles['table-row']} ${
-                        activeRow === item.paymentId ? styles['active-row'] : ''
+                        activeRow === item.email ? styles['active-row'] : ''
                     }`}
                 >
-                    <td>{item.paymentId}</td>
-                    <td>{item.status}</td>
-                    <td>{item.email}</td>
-                    <td>{item.date}</td>
-                </tr>
+                    <div className={styles['row-item']}>Email: {item.email}</div>
+                    <div className={styles['row-item']}>Date: {item.date}</div>
+                    <div className={styles['row-item']}>Access To: {item.accessTo}</div>
+                    <div className={styles['row-item']}>Subscribe: {item.subscribe}</div>
+                    <div className={styles['row-item']}>Confirmed: {item.confirmed ? 'Yes' : 'No'}</div>
+                    <div className={styles['row-item']}>Block Status: {item.block ? 'Blocked' : 'Active'}</div>
+                    <div className={styles['row-item']}>Referral: {item.referral}</div>
+                    <div className={styles['row-item']}>Referral ID: {item.referralId}</div>
+                </div>
             ))}
-            </tbody>
-        </table>
+        </div>
     );
-}
-
-function getTodayDate() {
-    const tomorrow = new Date();
-    tomorrow.setDate(tomorrow.getDate() + 1);
-    return tomorrow.toISOString().split('T')[0];
-}
-
-function getWeekAgoDate() {
-    const weekAgo = new Date();
-    weekAgo.setDate(weekAgo.getDate() - 7);
-    return weekAgo.toISOString().split('T')[0];
 }
