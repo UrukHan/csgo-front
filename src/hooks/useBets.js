@@ -3,27 +3,9 @@ import axios from "axios";
 import config from "../utils/config.json";
 
 const defaultBetData = {
-    '1': {
-        'win1': '-',
-        'win2': '-',
-        'draw': '-',
-        'winBase1': '-',
-        'winBase2': '-',
-    },
-    '2': {
-        'win1': '-',
-        'win2': '-',
-        'draw': '-',
-        'winBase1': '-',
-        'winBase2': '-',
-    },
-    '3': {
-        'win1': '-',
-        'win2': '-',
-        'draw': '-',
-        'winBase1': '-',
-        'winBase2': '-',
-    },
+    '1': { 'win1': '-', 'win2': '-', 'draw': '-', 'winBase1': '-', 'winBase2': '-' },
+    '2': { 'win1': '-', 'win2': '-', 'draw': '-', 'winBase1': '-', 'winBase2': '-' },
+    '3': { 'win1': '-', 'win2': '-', 'draw': '-', 'winBase1': '-', 'winBase2': '-' }
 };
 
 const useBets = (firstTeam, secondTeam) => {
@@ -32,13 +14,10 @@ const useBets = (firstTeam, secondTeam) => {
     const updateBetBoom = useCallback(async () => {
         try {
             const response = await axios.get(`${config.apiUrl}/betboom`, {
-                params: {
-                    team1: firstTeam,
-                    team2: secondTeam,
-                },
-            });
+                params: { team1: firstTeam, team2: secondTeam }
+                });
             const bbData = response.data.betboom;
-            console.error('bbData: ', bbData);
+            console.log('Fetched bbData:', bbData);
 
             if (bbData) {
                 const updatedBetData = { ...defaultBetData };
@@ -56,11 +35,11 @@ const useBets = (firstTeam, secondTeam) => {
                         };
                     }
                 });
-                console.error('updatedBetData: ', updatedBetData);
+                console.log('Updated bet data:', updatedBetData);
                 setBetBoomData(updatedBetData);
             }
         } catch (error) {
-            console.error('Error fetching data:', error);
+            console.error('Error fetching betBoom data:', error);
             throw error;
         }
     }, [firstTeam, secondTeam]);

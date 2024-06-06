@@ -2,27 +2,9 @@ import { useState, useCallback } from 'react';
 import config from "../utils/config.json";
 
 const defaultMark = {
-    '1': {
-        'win1': 0,
-        'win2': 0,
-        'draw': 0,
-        'winBase1': 0,
-        'winBase2': 0,
-    },
-    '2': {
-        'win1': 0,
-        'win2': 0,
-        'draw': 0,
-        'winBase1': 0,
-        'winBase2': 0,
-    },
-    '3': {
-        'win1': 0,
-        'win2': 0,
-        'draw': 0,
-        'winBase1': 0,
-        'winBase2': 0,
-    },
+    '1': { 'win1': 0, 'win2': 0, 'draw': 0, 'winBase1': 0, 'winBase2': 0 },
+    '2': { 'win1': 0, 'win2': 0, 'draw': 0, 'winBase1': 0, 'winBase2': 0 },
+    '3': { 'win1': 0, 'win2': 0, 'draw': 0, 'winBase1': 0, 'winBase2': 0 }
 };
 
 const useMarks = (predictions, betBoomData) => {
@@ -31,14 +13,7 @@ const useMarks = (predictions, betBoomData) => {
     const updateMarks = useCallback(async () => {
 
         try {
-            const minValues = {
-                'win1': 0,
-                'win2': 0,
-                'draw': 0,
-                'winBase1': 0,
-                'winBase2': 0,
-            };
-
+            const minValues = { 'win1': 0, 'win2': 0, 'draw': 0, 'winBase1': 0, 'winBase2': 0 };
 
             for (let map of config.maps) {
                 const prediction = predictions[map];
@@ -53,33 +28,22 @@ const useMarks = (predictions, betBoomData) => {
 
             }
 
-            const newDataMark = {
-                '1': { ...dataMark['1'] },
-                '2': { ...dataMark['2'] },
-                '3': { ...dataMark['3'] },
-            };
-
-            //console.log('minValues ', minValues)
-
+            const newDataMark = { '1': { ...dataMark['1'] }, '2': { ...dataMark['2'] }, '3': { ...dataMark['3'] } };
 
             for (let i = 1; i <= 3; i++) {
                 const betBoom = betBoomData[i];
-                //console.log('betBoom ', betBoom)
-                for (let key in minValues) {
-
-                    if (betBoom[key] !== '-' && minValues[key] <= betBoom[key] && betBoom[key] <= 3 && minValues[key] !== 0) {
+                Object.keys(minValues).forEach(key => {
+                    if (betBoom[key] !== '-' && minValues[key] <= betBoom[key] && minValues[key] !== 0) {
                         newDataMark[i][key] = 1;
                     }
-                }
+                });
             }
             setDataMark(newDataMark);
-            //console.log('newDataMark ', newDataMark)
+            console.log('Updated marks data:', newDataMark);
+        } catch (error) {
+            console.error('Error updating marks data:', error);
         }
-        catch (error) {
-            console.error('Error fetching mark:', error);
-            throw error;
-        }
-    }, [predictions, betBoomData]);
+    }, [predictions, betBoomData, dataMark]);
 
     const resetMarkData = useCallback(() => {
         setDataMark(defaultMark);

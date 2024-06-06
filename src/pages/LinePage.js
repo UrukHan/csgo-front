@@ -60,7 +60,6 @@ function LinePage({ stripePromise }) {
     };
 
     const handleGameClick = (game) => {
-
         const firstTeamOption = teamOptions.find((option) => option.value === game.team1);
         const secondTeamOption = teamOptions.find((option) => option.value === game.team2);
         if (firstTeamOption && secondTeamOption) {
@@ -91,10 +90,10 @@ function LinePage({ stripePromise }) {
         if (firstTeam && secondTeam) {
             updateBetBoom()
                 .then(result => {
-                    console.log(result);
+                    console.log('BetBoom data updated', result);
                 })
                 .catch(error => {
-                    console.error(error);
+                    console.error('Error updating BetBoom data', error);
                 });
         }
         resetMarkData();
@@ -103,10 +102,10 @@ function LinePage({ stripePromise }) {
     useEffect(() => {
         updateMarks()
             .then(result => {
-                console.log("MARKS", result);
+                console.log('Marks data updated', result);
             })
             .catch(error => {
-                console.error(error);
+                console.error('Error updating marks data', error);
             });
     }, [predictions, updateMarks]);
 
